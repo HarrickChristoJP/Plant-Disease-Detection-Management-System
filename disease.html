@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Prediction | AI-Powered Plant Health Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ---------- ENHANCED THEME COLORS ---------- */
+        :root {
+            --primary: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --secondary: #8BC34A;
+            --accent: #FFD700;
+            --accent-dark: #FFC107;
+            --text: #2E2E2E;
+            --text-light: #5A5A5A;
+            --bg-light: #F9FBF8;
+            --bg-gradient: linear-gradient(135deg, #f8fdf8 0%, #e8f5e9 50%, #d4edda 100%);
+            --card: rgba(255, 255, 255, 0.98);
+            --error: #FF5722;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --info: #2196F3;
+            --shadow: 0 12px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+            --border-radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* ---------- GLOBAL ENHANCEMENTS ---------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ---------- ENHANCED HEADER ---------- */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo i {
+            font-size: 3rem;
+            color: var(--accent);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            animation: pulse 2s infinite;
+        }
+
+        /* ---------- ENHANCED MAIN LAYOUT ---------- */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px 20px;
+            min-height: calc(100vh - 160px);
+        }
+
+        .card {
+            background: var(--card);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 50px;
+            width: 100%;
+            max-width: 1000px;
+            animation: slideUp 0.8s ease-out;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+        }
+
+        /* ---------- TYPOGRAPHY ENHANCEMENTS ---------- */
+        h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        /* ---------- ENHANCED IMAGE PREVIEW ---------- */
+        .image-preview {
+            margin: 30px 0;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .image-preview h3 {
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .preview-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fdf8, #e8f5e9);
+            border-radius: var(--border-radius);
+            border: 2px dashed var(--secondary);
+        }
+
+        .preview-image {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 12px;
+            box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+            border: 4px solid white;
+            transition: var(--transition);
+            object-fit: cover;
+        }
+
+        .preview-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        /* ---------- ENHANCED FORM LAYOUT ---------- */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .upload-and-crop {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .upload-and-crop {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .crop-selector {
+            width: 100%;
+        }
+
+        .crop-selector label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .crop-selector select {
+            width: 100%;
+            padding: 18px 24px;
+            border: 2px solid #e8f5e9;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            background: white;
+            transition: var(--transition);
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E7D32' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .crop-selector select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .file-input-container {
+            width: 100%;
+            position: relative;
+        }
+
+        .file-input-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 30px;
+            border: 3px dashed var(--secondary);
+            border-radius: var(--border-radius);
+            background: rgba(139, 195, 74, 0.08);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+            min-height: 200px;
+        }
+
+        .file-input-label:hover {
+            border-color: var(--primary);
+            background: rgba(76, 175, 80, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+        }
+
+        .file-input-label i {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .file-input-label:hover i {
+            color: var(--primary);
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .file-input-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .file-input-subtext {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .selected-file {
+            margin-top: 20px;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            animation: slideIn 0.5s ease;
+            font-weight: 500;
+        }
+
+        .selected-file i {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        /* ---------- ENHANCED BUTTON ---------- */
+        .submit-container {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.6);
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ---------- ENHANCED RESULT SECTION ---------- */
+        .result-box {
+            margin-top: 50px;
+            animation: fadeIn 1s ease-in-out;
+            border-top: 2px solid rgba(139, 195, 74, 0.2);
+            padding-top: 40px;
+        }
+
+        .result-box h3 {
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-weight: 700;
+        }
+
+        .result-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 35px;
+            background: linear-gradient(135deg, rgba(139, 195, 74, 0.1), rgba(76, 175, 80, 0.1));
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(139, 195, 74, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .result-header {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .prediction-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+        }
+
+        .confidence-meter {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .confidence-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .confidence-value {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .meter {
+            height: 16px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--warning), var(--success));
+            border-radius: 8px;
+            transition: width 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+
+        .meter-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .result-box h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 30px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .result-box ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 25px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .result-box li {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--secondary);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .result-box li i {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .result-box li:hover {
+            background: #eefdea;
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* ---------- ENHANCED LOADING ---------- */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(76, 175, 80, 0.2);
+            border-top: 6px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+            margin: 0 auto 25px;
+        }
+
+        /* ---------- ENHANCED ANIMATIONS ---------- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(30deg); }
+            50% { transform: translateY(-20px) rotate(30deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ---------- ENHANCED FOOTER ---------- */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: auto;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+        }
+
+        /* ---------- RESPONSIVE ENHANCEMENTS ---------- */
+        @media (max-width: 768px) {
+            header {
+                font-size: 2rem;
+                padding: 20px;
+            }
+            
+            .card {
+                padding: 30px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .upload-and-crop {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-header {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.6rem;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            .file-input-label {
+                padding: 40px 20px;
+            }
+            
+            button {
+                width: 100%;
+                justify-content: center;
+                padding: 18px 30px;
+            }
+            
+            .logo i {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-seedling"></i>
+            <span>Crop Disease Prediction</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Upload Plant Leaf Image</h2>
+            <p class="subtitle">Upload a clear image of a plant leaf to detect potential diseases using our advanced AI technology</p>
+            
+            <!-- Image Preview Section -->
+            {% if image_file %}
+            <div class="image-preview">
+                <h3><i class="fas fa-image"></i> Uploaded Image</h3>
+                <div class="preview-container">
+                    <img src="{{ url_for('static', filename=image_file) }}" alt="Uploaded Image" class="preview-image">
+                </div>
+            </div>
+            {% endif %}
+            
+            <form method="POST" action="/disease" enctype="multipart/form-data" id="upload-form">
+                <div class="upload-and-crop">
+                    <!-- Crop selector -->
+                    <div class="crop-selector">
+                        <label for="crop"><i class="fas fa-leaf"></i> Select Crop Type:</label>
+                        <select name="crop" id="crop" required>
+                            {% for c in crops %}
+                                <option value="{{ c }}" {% if selected_crop == c %}selected{% endif %}>{{ c }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- File input -->
+                    <div class="file-input-container">
+                        <label class="file-input-label" for="file-input">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span class="file-input-text">Choose Image File</span>
+                            <span class="file-input-subtext">JPG, PNG, JPEG formats supported • Max 10MB</span>
+                        </label>
+                        <input type="file" id="file-input" name="file" accept="image/*" required>
+                    </div>
+                    
+                    <div id="selected-file-container" class="selected-file" style="display: none;">
+                        <i class="fas fa-file-image"></i>
+                        <span id="selected-file-name">No file selected</span>
+                    </div>
+                    
+                    <div class="submit-container">
+                        <button type="submit" id="submit-btn">
+                            <i class="fas fa-search"></i>
+                            Analyze & Predict Disease
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="loading" id="loading-indicator">
+                <div class="loading-spinner"></div>
+                <p>Analyzing your image with AI... This may take a few moments.</p>
+            </div>
+
+            {% if result %}
+            <div class="result-box">
+                <h3><i class="fas fa-clipboard-check"></i> AI Prediction Results</h3>
+                
+                <div class="result-header">
+                    <div class="prediction-info">
+                        <p><strong><i class="fas fa-diagnoses"></i> Detected Disease:</strong></p>
+                        <span class="badge">{{ result.prediction }}</span>
+                    </div>
+                    
+                    <div class="confidence-meter">
+                        <div class="confidence-label">
+                            <span><strong><i class="fas fa-chart-line"></i> AI Confidence:</strong></span>
+                            <span class="confidence-value">{{ result.confidence }}%</span>
+                        </div>
+                        <div class="meter">
+                            <div class="meter-fill" style="width: {{ result.confidence }}%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4><i class="fas fa-lightbulb"></i> AI Recommendations & Treatment:</h4>
+                <ul>
+                    {% for key, value in result.details.items() %}
+                        <li>
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <strong>{{ key }}:</strong> {{ value }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <footer>
+        <p>Crop Disease Prediction &copy; 2023 | Advanced AI-Powered Plant Health Detection System</p>
+    </footer>
+
+    <script>
+        // Enhanced File input handling
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            const fileContainer = document.getElementById('selected-file-container');
+            const fileName = document.getElementById('selected-file-name');
+            
+            if (this.files.length > 0) {
+                fileContainer.style.display = 'flex';
+                fileName.textContent = this.files[0].name;
+                
+                // Enhanced preview image before upload
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    let previewContainer = document.querySelector('.image-preview');
+                    if (!previewContainer) {
+                        previewContainer = document.createElement('div');
+                        previewContainer.className = 'image-preview';
+                        
+                        const previewTitle = document.createElement('h3');
+                        previewTitle.innerHTML = '<i class="fas fa-image"></i> Image Preview';
+                        
+                        const previewImgContainer = document.createElement('div');
+                        previewImgContainer.className = 'preview-container';
+                        
+                        const previewImg = document.createElement('img');
+                        previewImg.className = 'preview-image';
+                        previewImg.alt = 'Image Preview';
+                        
+                        previewImgContainer.appendChild(previewImg);
+                        previewContainer.appendChild(previewTitle);
+                        previewContainer.appendChild(previewImgContainer);
+                        
+                        // Insert before the form
+                        const form = document.getElementById('upload-form');
+                        form.parentNode.insertBefore(previewContainer, form);
+                    }
+                    
+                    const previewImg = previewContainer.querySelector('.preview-image');
+                    previewImg.src = e.target.result;
+                    previewContainer.style.display = 'block';
+                };
+                reader.readAsDataURL(this.files[0]);
+            } else {
+                fileContainer.style.display = 'none';
+            }
+        });
+
+        // Enhanced Form submission handling
+        document.getElementById('upload-form').addEventListener('submit', function(e) {
+            const fileInput = document.getElementById('file-input');
+            if (fileInput.files.length === 0) {
+                e.preventDefault();
+                alert('Please select an image file first!');
+                return;
+            }
+            
+            document.getElementById('loading-indicator').style.display = 'block';
+            document.getElementById('submit-btn').disabled = true;
+            document.getElementById('submit-btn').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const card = document.querySelector('.card');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.8s ease-out';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html> 

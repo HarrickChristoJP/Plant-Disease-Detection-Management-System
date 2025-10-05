@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmConnect - Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --secondary: #8BC34A;
+            --accent: #FFD700;
+            --text: #2E2E2E;
+            --background: #F5F5F5;
+            --card: #FFFFFF;
+            --alert: #FF5722;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --fertilizer: #8BC34A;
+            --pesticide: #FF9800;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+            background: linear-gradient(to bottom, var(--background), #E8F5E9);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 16px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 8px;
+            font-size: 28px;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .search-bar {
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            padding: 8px 16px;
+            width: 300px;
+        }
+        
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 0 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .action-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--alert);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .page-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-title-icon {
+            margin-right: 12px;
+            color: var(--primary);
+        }
+        
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .nav-tab {
+            flex: 1;
+            padding: 16px 24px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .nav-tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+            background-color: rgba(76, 175, 80, 0.05);
+        }
+        
+        .nav-tab:hover:not(.active) {
+            background-color: rgba(76, 175, 80, 0.02);
+        }
+        
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            margin-bottom: 24px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background-color: var(--card);
+            box-shadow: var(--shadow);
+        }
+        
+        .category-tab {
+            flex: 1;
+            padding: 12px 16px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-tab.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            background-color: var(--card);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-label {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .filter-select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            background: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background-color: var(--card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            color: white;
+            z-index: 2;
+        }
+        
+        .badge-fertilizer {
+            background-color: var(--fertilizer);
+        }
+        
+        .badge-pesticide {
+            background-color: var(--pesticide);
+        }
+        
+        .product-image {
+            height: 180px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-details {
+            padding: 20px;
+        }
+        
+        .product-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .product-farmer {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .farmer-icon {
+            margin-right: 6px;
+            color: var(--primary);
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .rating-stars {
+            color: var(--accent);
+            margin-right: 5px;
+        }
+        
+        .rating-count {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .product-price {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rupee-symbol {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            margin-right: 2px;
+            font-size: 18px;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            flex: 1;
+            margin-right: 8px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3d8b40;
+        }
+        
+        .btn-secondary {
+            background-color: var(--accent);
+            color: var(--text);
+            width: 40px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e6c200;
+        }
+        
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cart-sidebar.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .remove-item {
+            color: var(--alert);
+            cursor: pointer;
+            margin-left: auto;
+        }
+        
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background: #3d8b40;
+        }
+        
+        /* Product Tracker */
+        .tracker-section {
+            background-color: var(--card);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        .tracker-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .tracker-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            color: var(--text);
+        }
+        
+        .tracker-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .tracker-stat {
+            background-color: var(--background);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .tracker-stat-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tracker-stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .tracker-progress {
+            margin-top: 24px;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+        }
+        
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Sales Analytics */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .analytics-card {
+            background-color: var(--card);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+        
+        .analytics-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .analytics-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Recent Orders */
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        
+        .orders-table th, .orders-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .orders-table th {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .status-completed {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: var(--primary);
+        }
+        
+        .status-pending {
+            background-color: rgba(255, 215, 0, 0.1);
+            color: #b38f00;
+        }
+        
+        .status-processing {
+            background-color: rgba(33, 150, 243, 0.1);
+            color: #1976d2;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                width: 100%;
+            }
+            
+            .page-title {
+                font-size: 26px;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .nav-tab {
+                border-bottom: 1px solid #e0e0e0;
+                border-right: none;
+            }
+            
+            .nav-tab.active {
+                border-bottom: 3px solid var(--primary);
+                border-right: none;
+            }
+            
+            .category-tabs {
+                flex-direction: column;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+        
+        /* Custom Rupee Symbol Styling */
+        .rupee-symbol {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            margin-right: 2px;
+            font-size: 18px;
+        }
+        
+        .product-price .rupee-symbol {
+            font-size: 20px;
+        }
+        
+        .analytics-value .rupee-symbol {
+            font-size: 28px;
+        }
+        
+        .tracker-stat-value .rupee-symbol {
+            font-size: 24px;
+        }
+        
+        .orders-table .rupee-symbol {
+            font-size: 14px;
+        }
+        
+        /* Overlay for cart */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                FarmConnect
+            </div>
+            
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="action-icon">
+                        <i class="far fa-user"></i>
+                    </div>
+                    <div class="action-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <h1 class="page-title">
+            <span class="page-title-icon">🛒</span>
+            Marketplace
+        </h1>
+        
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-tab="for-sale">For Sale</div>
+            <div class="nav-tab" data-tab="for-sales">For Sales</div>
+        </div>
+        
+        <!-- For Sale Tab Content -->
+        <div id="for-sale" class="tab-content active">
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="all">All Products</div>
+                <div class="category-tab" data-category="crops">Crops</div>
+                <div class="category-tab" data-category="fertilizers">Fertilizers</div>
+                <div class="category-tab" data-category="pesticides">Pesticides</div>
+            </div>
+            
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="filter-group">
+                    <span class="filter-label">Sort by:</span>
+                    <select class="filter-select" id="sort-by">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Price Range:</span>
+                    <select class="filter-select" id="price-range">
+                        <option value="all">All Prices</option>
+                        <option value="0-100">Under ₹100</option>
+                        <option value="100-500">₹100 - ₹500</option>
+                        <option value="500-1000">₹500 - ₹1000</option>
+                        <option value="1000+">Over ₹1000</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Location:</span>
+                    <select class="filter-select" id="location">
+                        <option value="all">All Locations</option>
+                        <option value="north">Northern Region</option>
+                        <option value="south">Southern Region</option>
+                        <option value="east">Eastern Region</option>
+                        <option value="west">Western Region</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Crops -->
+                <div class="product-card" data-category="crops" data-price="45" data-rating="4.5">
+                    <div class="product-image" style="background-image: url('https://www.thespruce.com/thmb/ZsK25I6NhZJr9Y5Bxj3bGitaQL4=/5750x3827/filters:no_upscale():max_bytes(150000):strip_icc()/top-tomato-growing-tips-1402587-10-f09428178dbe4e64b88189ea97d831b8.jpg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Tomato</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">👨‍🌾</span>
+                            Green Valley Farms
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(128)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>45 / kg</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="1" data-name="Tomato" data-price="45" data-image="https://www.thespruce.com/thmb/ZsK25I6NhZJr9Y5Bxj3bGitaQL4=/5750x3827/filters:no_upscale():max_bytes(150000):strip_icc()/top-tomato-growing-tips-1402587-10-f09428178dbe4e64b88189ea97d831b8.jpg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="crops" data-price="30" data-rating="4.2">
+                    <div class="product-image" style="background-image: url('https://www.epicgardening.com/wp-content/uploads/2023/05/potato-growth-stages-1200x667.jpeg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Potato</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">👩‍🌾</span>
+                            Root Harvest
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(95)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>30 / kg</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="2" data-name="Potato" data-price="30" data-image="https://www.epicgardening.com/wp-content/uploads/2023/05/potato-growth-stages-1200x667.jpeg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="crops" data-price="60" data-rating="4.7">
+                    <div class="product-image" style="background-image: url('https://guyanachronicle.com/wp-content/uploads/2016/10/Rice.jpg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Rice/Paddy</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">👨‍🌾</span>
+                            Paddy Fields
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(210)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>60 / kg</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="3" data-name="Rice/Paddy" data-price="60" data-image="https://guyanachronicle.com/wp-content/uploads/2016/10/Rice.jpg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fertilizers -->
+                <div class="product-card" data-category="fertilizers" data-price="450" data-rating="4.4">
+                    <div class="product-badge badge-fertilizer">Fertilizer</div>
+                    <div class="product-image" style="background-image: url('https://vgrgardens.com/wp-content/uploads/2024/11/1-KG-8-1.png')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">NPK Fertilizer</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">🏭</span>
+                            AgroChem Solutions
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(76)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>450 / bag</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="4" data-name="NPK Fertilizer" data-price="450" data-image="https://vgrgardens.com/wp-content/uploads/2024/11/1-KG-8-1.png">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="fertilizers" data-price="320" data-rating="4.8">
+                    <div class="product-badge badge-fertilizer">Fertilizer</div>
+                    <div class="product-image" style="background-image: url('https://m.media-amazon.com/images/I/81u7y8XgkXL.SL1440.jpg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Organic Compost</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">🏭</span>
+                            Green Earth Organics
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(142)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>320 / bag</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="5" data-name="Organic Compost" data-price="320" data-image="https://m.media-amazon.com/images/I/81u7y8XgkXL.SL1440.jpg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="fertilizers" data-price="280" data-rating="4.3">
+                    <div class="product-badge badge-fertilizer">Fertilizer</div>
+                    <div class="product-image" style="background-image: url('https://i5.walmartimages.com/seo/Urea-Fertilizer-46-0-0-Plantco-Spray-Grade-Water-Soluble-Plant-Food-Indoor-Outdoor-Plants-Makes-36-Gallons-Foliar-Liquid_bf9cf46e-0f6d-42e3-9566-3567cabe357f.29e45d8d1161753773e8cfdd6a227ef7.jpeg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Urea</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">🏭</span>
+                            National Fertilizers Ltd
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>280 / bag</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="6" data-name="Urea" data-price="280" data-image="https://i5.walmartimages.com/seo/Urea-Fertilizer-46-0-0-Plantco-Spray-Grade-Water-Soluble-Plant-Food-Indoor-Outdoor-Plants-Makes-36-Gallons-Foliar-Liquid_bf9cf46e-0f6d-42e3-9566-3567cabe357f.29e45d8d1161753773e8cfdd6a227ef7.jpeg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pesticides -->
+                <div class="product-card" data-category="pesticides" data-price="180" data-rating="4.6">
+                    <div class="product-badge badge-pesticide">Pesticide</div>
+                    <div class="product-image" style="background-image: url('https://casadeamor.in/cdn/shop/products/casadeamorwatersolubleneemoilforplants.jpg?v=1644816522')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Neem Oil Pesticide</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">🏭</span>
+                            BioProtect Organics
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(167)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>180 / liter</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="7" data-name="Neem Oil Pesticide" data-price="180" data-image="https://casadeamor.in/cdn/shop/products/casadeamorwatersolubleneemoilforplants.jpg?v=1644816522">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="pesticides" data-price="650" data-rating="4.1">
+                    <div class="product-badge badge-pesticide">Pesticide</div>
+                    <div class="product-image" style="background-image: url('https://www.fertilome.com/ProductFiles/Broad-Spectrum-Insecticide-RTU-32oz-10293-Planogram-L.png')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Broad Spectrum Insecticide</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">🏭</span>
+                            CropShield Chemicals
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(54)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>650 / bottle</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="8" data-name="Broad Spectrum Insecticide" data-price="650" data-image="https://www.fertilome.com/ProductFiles/Broad-Spectrum-Insecticide-RTU-32oz-10293-Planogram-L.png">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="pesticides" data-price="420" data-rating="4.5">
+                    <div class="product-badge badge-pesticide">Pesticide</div>
+                    <div class="product-image" style="background-image: url('https://i5.walmartimages.com/asr/0cacaa4e-f9cd-4804-959d-ef6091f0af61.3d0a08c241fdd307494a1f850ebe164c.jpeg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Copper Fungicide</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">🏭</span>
+                            PlantCare Solutions
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(73)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>420 / packet</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="9" data-name="Copper Fungicide" data-price="420" data-image="https://i5.walmartimages.com/asr/0cacaa4e-f9cd-4804-959d-ef6091f0af61.3d0a08c241fdd307494a1f850ebe164c.jpeg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More Crops -->
+                <div class="product-card" data-category="crops" data-price="25" data-rating="4.0">
+                    <div class="product-image" style="background-image: url('https://www.healthbenefitstimes.com/glossary/wp-content/uploads/2020/10/Maize.jpg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Maize</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">👩‍🌾</span>
+                            Golden Fields
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(62)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>25 / kg</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="10" data-name="Maize" data-price="25" data-image="https://www.healthbenefitstimes.com/glossary/wp-content/uploads/2020/10/Maize.jpg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="crops" data-price="35" data-rating="4.3">
+                    <div class="product-image" style="background-image: url('https://thepaleodiet.com/wp-content/uploads/2023/05/Wheat-Series-Part5-1560x1066.jpg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Wheat</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">👨‍🌾</span>
+                            Wheat Harvesters
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(118)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>35 / kg</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="11" data-name="Wheat" data-price="35" data-image="https://thepaleodiet.com/wp-content/uploads/2023/05/Wheat-Series-Part5-1560x1066.jpg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="crops" data-price="90" data-rating="4.7">
+                    <div class="product-image" style="background-image: url('https://www.thestatesman.com/wp-content/uploads/2022/09/The-Apple-cultivation-story-is-full-of-challenges-in-India-1.jpg')">
+                        <!-- Image placeholder - replace with actual URL -->
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Apple</h3>
+                        <div class="product-farmer">
+                            <span class="farmer-icon">👨‍🌾</span>
+                            Orchard Fresh
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price"><span class="rupee-symbol">₹</span>90 / kg</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="12" data-name="Apple" data-price="90" data-image="https://www.thestatesman.com/wp-content/uploads/2022/09/The-Apple-cultivation-story-is-full-of-challenges-in-India-1.jpg">Add to Cart</button>
+                            <button class="btn btn-secondary favorite-btn">❤</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- For Sales Tab Content -->
+        <div id="for-sales" class="tab-content">
+            <!-- Product Tracker -->
+            <div class="tracker-section">
+                <div class="tracker-header">
+                    <h2 class="tracker-title">Product Tracker</h2>
+                    <button class="btn btn-primary">Add New Product</button>
+                </div>
+                
+                <div class="tracker-stats">
+                    <div class="tracker-stat">
+                        <div class="tracker-stat-value"><span class="rupee-symbol">₹</span>1,24,560</div>
+                        <div class="tracker-stat-label">Total Revenue</div>
+                    </div>
+                    <div class="tracker-stat">
+                        <div class="tracker-stat-value">42</div>
+                        <div class="tracker-stat-label">Orders This Month</div>
+                    </div>
+                    <div class="tracker-stat">
+                        <div class="tracker-stat-value">92%</div>
+                        <div class="tracker-stat-label">Customer Satisfaction</div>
+                    </div>
+                    <div class="tracker-stat">
+                        <div class="tracker-stat-value">4.2</div>
+                        <div class="tracker-stat-label">Avg. Rating</div>
+                    </div>
+                </div>
+                
+                <div class="tracker-progress">
+                    <h3 style="margin-bottom: 16px;">Sales Progress</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span>0</span>
+                        <span>Monthly Goal: <span class="rupee-symbol">₹</span>50,000</span>
+                        <span><span class="rupee-symbol">₹</span>37,500</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sales Analytics -->
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3 class="analytics-title">Total Revenue</h3>
+                    <div class="analytics-value"><span class="rupee-symbol">₹</span>1,24,560</div>
+                </div>
+                <div class="analytics-card">
+                    <h3 class="analytics-title">Orders This Month</h3>
+                    <div class="analytics-value">42</div>
+                </div>
+                <div class="analytics-card">
+                    <h3 class="analytics-title">Average Order Value</h3>
+                    <div class="analytics-value"><span class="rupee-symbol">₹</span>2,965</div>
+                </div>
+            </div>
+            
+            <!-- Recent Orders -->
+            <div class="tracker-section">
+                <h2 class="tracker-title">Recent Orders</h2>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Product</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-7842</td>
+                            <td>Tomato (5kg)</td>
+                            <td>Rahul Sharma</td>
+                            <td><span class="rupee-symbol">₹</span>225</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-7841</td>
+                            <td>NPK Fertilizer (2 bags)</td>
+                            <td>Priya Patel</td>
+                            <td><span class="rupee-symbol">₹</span>900</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-7840</td>
+                            <td>Neem Oil (5 liters)</td>
+                            <td>Anil Kumar</td>
+                            <td><span class="rupee-symbol">₹</span>900</td>
+                            <td><span class="status-badge status-processing">Processing</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-7839</td>
+                            <td>Wheat (15kg)</td>
+                            <td>Sunita Singh</td>
+                            <td><span class="rupee-symbol">₹</span>525</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">Your Cart</h2>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+            <div class="cart-item">
+                <div class="cart-item-image" style="background-image: url('https://www.thespruce.com/thmb/ZsK25I6NhZJr9Y5Bxj3bGitaQL4=/5750x3827/filters:no_upscale():max_bytes(150000):strip_icc()/top-tomato-growing-tips-1402587-10-f09428178dbe4e64b88189ea97d831b8.jpg')"></div>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">Tomato</div>
+                    <div class="cart-item-price"><span class="rupee-symbol">₹</span>45 / kg</div>
+                    <div class="cart-item-actions">
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus">-</button>
+                            <span class="quantity">2</span>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <div class="remove-item"><i class="fas fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-image" style="background-image: url('https://vgrgardens.com/wp-content/uploads/2024/11/1-KG-8-1.png')"></div>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">NPK Fertilizer</div>
+                    <div class="cart-item-price"><span class="rupee-symbol">₹</span>450 / bag</div>
+                    <div class="cart-item-actions">
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <div class="remove-item"><i class="fas fa-trash"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span><span class="rupee-symbol">₹</span>540</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Overlay for cart -->
+    <div class="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FarmConnect</h3>
+                    <p>Connecting farmers directly with consumers for fresh, sustainable produce.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Marketplace</a></li>
+                        <li><a href="#">Farmers</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    
+                    <ul>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; HACK-AI-THON 2.0|| GenZ Coderz || SJCE.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Category filter functionality
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all category tabs
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const products = document.querySelectorAll('.product-card');
+                
+                if (category === 'all') {
+                    // Show all products
+                    products.forEach(product => {
+                        product.style.display = 'block';
+                    });
+                } else {
+                    // Show only products of selected category
+                    products.forEach(product => {
+                        if (product.getAttribute('data-category') === category) {
+                            product.style.display = 'block';
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Add to favorites functionality
+        document.querySelectorAll('.favorite-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent === '❤') {
+                    this.innerHTML = '<i class="fas fa-heart"></i>';
+                    this.style.color = '#e74c3c';
+                } else {
+                    this.innerHTML = '❤';
+                    this.style.color = '';
+                }
+            });
+        });
+        
+        // Cart functionality
+        const cartIcon = document.getElementById('cart-icon');
+        const cartSidebar = document.querySelector('.cart-sidebar');
+        const closeCart = document.querySelector('.close-cart');
+        const overlay = document.querySelector('.overlay');
+        
+        cartIcon.addEventListener('click', function() {
+            cartSidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', function() {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        overlay.addEventListener('click', function() {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+                const price = this.getAttribute('data-price');
+                const image = this.getAttribute('data-image');
+                
+                // In a real app, you would add the item to the cart
+                // For this demo, we'll just show a confirmation
+                alert(`${name} added to cart!`);
+                
+                // Update cart count
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + 1;
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const products = document.querySelectorAll('.product-card');
+            
+            products.forEach(product => {
+                const productName = product.querySelector('.product-name').textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+        
+        // Filter functionality
+        const sortSelect = document.getElementById('sort-by');
+        const priceRangeSelect = document.getElementById('price-range');
+        
+        sortSelect.addEventListener('change', applyFilters);
+        priceRangeSelect.addEventListener('change', applyFilters);
+        
+        function applyFilters() {
+            const sortBy = sortSelect.value;
+            const priceRange = priceRangeSelect.value;
+            
+            // In a real app, you would make an API call or filter the products
+            // For this demo, we'll just log the selected filters
+            console.log(`Sort by: ${sortBy}, Price range: ${priceRange}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+{
+    "Apple___Apple_scab": {
+        "Cause": "Fungal disease caused by Venturia inaequalis. Spores overwinter in fallen leaves and infect new growth in spring. Spreads rapidly in cool, wet weather (55-75°F) with rain or heavy dew. High humidity creates ideal conditions for spore germination and infection.",
+        "Recommendation": "1. Plant scab-resistant varieties like 'Liberty' or 'Enterprise'. 2. Space trees properly for good air circulation. 3. Avoid overhead irrigation. 4. Rake and destroy fallen leaves in autumn. 5. Apply dormant oil spray in early spring before bud break.",
+        "Treatment": "Begin fungicide applications at green tip stage and continue through petal fall. Use products containing myclobutanil, captan, or sulfur. Apply every 7-14 days during wet periods. For organic control, use copper-based fungicides or potassium bicarbonate."
+    },
+    "Apple___Black_rot": {
+        "Cause": "Fungal pathogen Botryosphaeria obtusa. The fungus overwinters in cankers, mummified fruits, and infected bark. Spores spread by rain, wind, and insects. Infection occurs through wounds, leaf scars, or direct penetration. Warm temperatures (75-85°F) and wet conditions favor disease development.",
+        "Recommendation": "1. Prune out and destroy all cankered branches. 2. Remove mummified fruits from trees and ground. 3. Avoid mechanical injuries to bark. 4. Maintain tree vigor with proper fertilization. 5. Ensure good sunlight penetration through proper pruning.",
+        "Treatment": "Apply protective fungicides during bloom and early fruit development. Use captan, thiophanate-methyl, or myclobutanil. Make first application at pink bud stage and continue every 10-14 days during wet weather. Remove infected fruits promptly."
+    },
+    "Apple___Cedar_apple_rust": {
+        "Cause": "Complex fungal disease (Gymnosporangium juniperi-virginianae) requiring both apple and eastern red cedar trees. Orange gelatinous spores from cedar galls infect apple leaves in spring. Cool, rainy weather during apple bloom creates perfect infection conditions. Complete life cycle takes 2 years.",
+        "Recommendation": "1. Remove eastern red cedars within 2 miles if possible. 2. Plant resistant varieties like 'William's Pride' or 'Freedom'. 3. Apply preventive fungicides before infection periods. 4. Improve air circulation around trees. 5. Monitor cedar trees for galls in early spring.",
+        "Treatment": "Apply fungicides at pink bud stage and repeat every 7-10 days until petal fall. Use myclobutanil, fenarimol, or trifloxystrobin. For organic control, spray sulfur or copper-based products. Remove visibly infected leaves when practical."
+    },
+    "Apple___healthy": {
+        "Cause": "No disease detected. Plant shows normal growth and development.",
+        "Recommendation": "1. Continue current management practices. 2. Monitor regularly for early signs of disease. 3. Maintain balanced fertilization. 4. Ensure proper irrigation practices. 5. Keep records of plant health observations.",
+        "Treatment": "No treatment needed. Focus on preventive care including proper pruning, soil management, and regular monitoring for pests and diseases."
+    },
+    "Blueberry___healthy": {
+        "Cause": "No disease detected. Plant is in good health with normal foliage and growth patterns.",
+        "Recommendation": "1. Maintain soil pH between 4.5-5.5. 2. Apply appropriate fertilizers for blueberries. 3. Ensure adequate moisture, especially during fruit development. 4. Mulch with pine bark or sawdust. 5. Prune annually to remove old wood.",
+        "Treatment": "No treatment required. Continue cultural practices that maintain plant health and prevent future disease issues."
+    },
+    "Cherry_(including_sour)___Powdery_mildew": {
+        "Cause": "Fungal disease caused by Podosphaera clandestina. Thrives in warm (70-80°F), dry conditions with high humidity at night. Spreads by wind-borne spores. Dense foliage and poor air circulation increase severity. Young leaves and shoots are most susceptible.",
+        "Recommendation": "1. Plant resistant varieties when available. 2. Prune to improve air circulation. 3. Avoid excessive nitrogen fertilization. 4. Remove and destroy severely infected shoots. 5. Position plants in areas with good morning sun to dry foliage quickly.",
+        "Treatment": "Apply fungicides at first sign of disease. Use horticultural oil, potassium bicarbonate, or sulfur. Chemical options include myclobutanil or triforine. Spray every 7-14 days as needed. Time applications before expected infection periods."
+    },
+    "Cherry_(including_sour)___healthy": {
+        "Cause": "No disease present. Tree exhibits normal growth and fruit production characteristics.",
+        "Recommendation": "1. Continue proper pruning practices. 2. Monitor for common cherry pests like fruit flies. 3. Maintain consistent soil moisture. 4. Apply balanced fertilizer in early spring. 5. Protect blossoms from late spring frosts.",
+        "Treatment": "No treatment necessary. Maintain preventive spray program for common cherry diseases and pests as part of routine orchard management."
+    },
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+        "Cause": "Fungal disease caused by Cercospora zeae-maydis. Overwinters in crop residue. Spores spread by wind and rain splash. Disease develops in warm (75-85°F), humid conditions. Severe in continuous corn fields with minimum tillage. Lower leaves infected first, moving upward.",
+        "Recommendation": "1. Plant resistant hybrids. 2. Rotate with non-host crops like soybeans. 3. Bury crop residue through tillage. 4. Avoid planting too densely. 5. Use balanced fertility without excess nitrogen.",
+        "Treatment": "Apply fungicides at tasseling stage if disease pressure is high. Use products containing azoxystrobin, pyraclostrobin, or propiconazole. Economic threshold: treat when disease reaches ears before milk stage. Follow label directions for application timing."
+    },
+    "Corn_(maize)___Common_rust": {
+        "Cause": "Fungal disease caused by Puccinia sorghi. Requires living plant tissue to survive. Spores wind-blown from southern regions annually. Develops in cool to moderate temperatures (60-77°F) with high humidity or dew. Early planting may escape severe infection.",
+        "Recommendation": "1. Plant resistant hybrids with good rust tolerance. 2. Avoid late planting in areas with rust history. 3. Ensure proper plant spacing for air movement. 4. Monitor fields regularly from whorl stage onward. 5. Use appropriate fertility levels.",
+        "Treatment": "Fungicide application may be economical in sweet corn or seed production fields. Apply at first sign of disease using azoxystrobin, pyraclostrobin, or tebuconazole. Field corn rarely requires treatment unless severe infection occurs before tasseling."
+    },
+    "Corn_(maize)___Northern_Leaf_Blight": {
+        "Cause": "Fungal disease caused by Exserohilum turcicum. Overwinters in corn debris. Spores produced during wet periods and spread by wind. Infection favored by cool temperatures (65-80°F) and high humidity. Large, cigar-shaped lesions characteristic of this disease.",
+        "Recommendation": "1. Plant resistant hybrids with Ht resistance genes. 2. Practice crop rotation with non-cereals. 3. Incorporate crop residue after harvest. 4. Avoid planting consecutive corn crops. 5. Use appropriate planting dates for your region.",
+        "Treatment": "Apply fungicides when disease reaches economic threshold (usually at tasseling stage). Use strobilurin or triazole fungicides. Timing is critical - apply before severe infection develops. Consider treatment if 5-10% of leaves show symptoms at silking."
+    },
+    "Corn_(maize)___healthy": {
+        "Cause": "No disease symptoms observed. Plants show normal growth and development.",
+        "Recommendation": "1. Continue good cultural practices. 2. Monitor fields regularly for early disease detection. 3. Maintain proper soil fertility. 4. Use integrated pest management strategies. 5. Keep records of field health observations.",
+        "Treatment": "No treatment needed. Focus on preventive measures including crop rotation, residue management, and selecting appropriate hybrids for your growing conditions."
+    },
+    "Grape___Black_rot": {
+        "Cause": "Fungal disease caused by Guignardia bidwellii. Overwinters in mummified berries and infected canes. Spores released during rain and infect during warm, wet periods. Most infections occur between 60-90°F with 6+ hours of leaf wetness. Berries susceptible until 3-5 weeks after bloom.",
+        "Recommendation": "1. Plant resistant varieties like 'Catawba' or 'Norton'. 2. Prune properly to improve air circulation. 3. Remove and destroy mummified berries. 4. Position rows for maximum sun exposure and air movement. 5. Avoid overhead irrigation.",
+        "Treatment": "Begin fungicide program at new shoot growth (3-6 inches). Continue every 7-14 days through 3-5 weeks after bloom. Use mancozeb, captan, or myclobutanil. Critical periods: pre-bloom, bloom, and post-bloom. Organic options: sulfur or copper formulations."
+    },
+    "Grape___Esca_(Black_Measles)": {
+        "Cause": "Complex disease caused by multiple fungi including Phaeoacremonium aleophilum and Fomitiporia mediterranea. Enters through pruning wounds. Develops slowly over years. Stress factors like drought, poor nutrition, or winter injury accelerate symptoms. Mature vines (5+ years) most affected.",
+        "Recommendation": "1. Protect pruning wounds with wound sealants. 2. Prune during dry periods. 3. Remove and destroy severely infected vines. 4. Avoid mechanical injury to trunks. 5. Maintain vine vigor with proper nutrition and water management.",
+        "Treatment": "No effective cure once internal wood is infected. Surgical removal of diseased wood may help in early stages. Preventive fungicide applications to pruning wounds may reduce new infections. Use thiophanate-methyl or tebuconazole as protective treatments after pruning."
+    },
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+        "Cause": "Fungal disease caused by Pseudocercospora vitis. Overwinters in infected leaves and canes. Spreads during rainy periods. Warm, humid weather favors disease development. More severe in dense plantings with poor air circulation. Weakened vines more susceptible to infection.",
+        "Recommendation": "1. Improve air circulation through proper pruning. 2. Remove and destroy infected leaves during dormancy. 3. Avoid overhead watering. 4. Use drip irrigation instead of sprinklers. 5. Maintain balanced vine nutrition without excess nitrogen.",
+        "Treatment": "Apply fungicides beginning when shoots are 6-12 inches long. Continue every 10-14 days during wet periods. Use mancozeb, captan, or copper-based products. Ensure thorough coverage of both leaf surfaces. Time applications before expected rain events."
+    },
+    "Grape___healthy": {
+        "Cause": "No disease detected. Vines show normal growth and fruit development.",
+        "Recommendation": "1. Continue current management program. 2. Monitor regularly for early pest and disease detection. 3. Maintain proper pruning schedule. 4. Ensure balanced nutrition. 5. Keep vineyard floor management appropriate for your region.",
+        "Treatment": "No treatment needed. Maintain preventive spray program for common grape diseases in your area as part of routine vineyard management."
+    },
+    "Orange___Haunglongbing_(Citrus_greening)": {
+        "Cause": "Bacterial disease caused by Candidatus Liberibacter asiaticus. Spread by Asian citrus psyllid insects. Bacteria multiply in phloem, blocking nutrient transport. No cure once tree is infected. Incubation period from infection to symptoms: 6 months to 2 years. Eventually fatal to trees.",
+        "Recommendation": "1. Plant certified disease-free trees. 2. Implement aggressive psyllid control program. 3. Remove and destroy infected trees promptly. 4. Monitor regularly for psyllids and symptoms. 5. Work with local extension services for area-wide management.",
+        "Treatment": "No effective cure exists. Remove infected trees to prevent spread. For preventive protection: apply systemic insecticides for psyllid control. Use foliar sprays like cyantraniliprole or imidacloprid. Nutritional programs may help maintain production in early-infected trees but won't cure disease."
+    },
+    "Peach___Bacterial_spot": {
+        "Cause": "Bacterial disease caused by Xanthomonas arboricola pv. pruni. Overwinters in cankers and buds. Spread by rain, wind, and contaminated tools. Infection requires leaf wetness and warm temperatures (70-85°F). Severe in areas with frequent spring rains and wind storms.",
+        "Recommendation": "1. Plant resistant varieties like 'Clayton' or 'Harvester'. 2. Site orchards on well-drained soil with good air movement. 3. Avoid overhead irrigation. 4. Prune during dry weather. 5. Remove and destroy severely infected trees in heavily affected areas.",
+        "Treatment": "Apply copper bactericides at leaf fall and before bud swell in spring. During growing season, use streptomycin or oxytetracycline at 7-10 day intervals during infection periods. Include mancozeb with copper to improve efficacy. Begin sprays at petal fall."
+    },
+    "Peach___healthy": {
+        "Cause": "No disease present. Tree exhibits normal growth, flowering, and fruiting characteristics.",
+        "Recommendation": "1. Continue proper pruning and training. 2. Monitor for common peach pests like oriental fruit moth. 3. Maintain consistent irrigation, especially during fruit development. 4. Apply dormant oil for scale control. 5. Thin fruit properly for optimal size and quality.",
+        "Treatment": "No treatment necessary. Maintain routine spray program for peach diseases and insects appropriate for your growing region and conditions."
+    },
+    "Pepper,_bell___Bacterial_spot": {
+        "Cause": "Bacterial disease caused by Xanthomonas species. Spread by infected seeds, transplants, or contaminated equipment. Bacteria enter through natural openings or wounds. Develops rapidly in warm (75-85°F), wet weather. Spread by splashing water, workers, or machinery.",
+        "Recommendation": "1. Use certified disease-free seeds and transplants. 2. Practice 2-3 year crop rotation. 3. Avoid working in wet plants. 4. Use drip irrigation instead of overhead. 5. Remove and destroy infected plant debris after harvest.",
+        "Treatment": "Copper-based bactericides applied preventively may reduce spread. Use at 7-10 day intervals during favorable disease conditions. Combine copper with mancozeb for better control. Streptomycin may be used in some regions. Start applications before symptoms appear."
+    },
+    "Pepper,_bell___healthy": {
+        "Cause": "No disease detected. Plants show vigorous growth and normal fruit development.",
+        "Recommendation": "1. Continue good cultural practices. 2. Monitor for common pepper pests. 3. Maintain consistent soil moisture. 4. Use balanced fertilization. 5. Provide support for heavy fruit loads.",
+        "Treatment": "No treatment needed. Continue preventive measures including proper spacing, weed control, and regular monitoring for early problem detection."
+    },
+    "Potato___Early_blight": {
+        "Cause": "Fungal disease caused by Alternaria solani. Overwinters in infected plant debris and soil. Spread by wind, rain, and contaminated equipment. Development favored by warm temperatures (75-85°F) with alternating wet and dry periods. Older, stressed plants more susceptible.",
+        "Recommendation": "1. Plant certified disease-free seed potatoes. 2. Practice 3-year crop rotation with non-hosts. 3. Maintain adequate potassium levels. 4. Avoid overhead irrigation. 5. Destroy crop residue after harvest.",
+        "Treatment": "Begin fungicide applications when plants are 6-8 inches tall. Use chlorothalonil, mancozeb, or pyraclostrobin. Apply every 7-14 days depending on weather. For organic production, use copper-based fungicides or Bacillus subtilis products. Ensure good coverage of lower leaves."
+    },
+    "Potato___Late_blight": {
+        "Cause": "Oomycete disease caused by Phytophthora infestans. Not a true fungus but behaves similarly. Requires living plant tissue to survive. Spreads rapidly in cool, wet weather (60-70°F) with high humidity. Can destroy entire fields in days under ideal conditions.",
+        "Recommendation": "1. Plant resistant varieties when available. 2. Use certified disease-free seed potatoes. 3. Destroy cull piles and volunteer plants. 4. Avoid overhead irrigation when possible. 5. Scout fields regularly during favorable weather.",
+        "Treatment": "Apply protective fungicides before infection occurs. Use mancozeb, chlorothalonil, or fixed copper. When disease is present, use systemic fungicides like mefenoxam or fluopicolide. Apply every 5-7 days during high-risk periods. Follow anti-resistance strategies by rotating fungicide classes."
+    },
+    "Potato___healthy": {
+        "Cause": "No disease symptoms observed. Plants show normal growth and tuber development.",
+        "Recommendation": "1. Continue current management practices. 2. Monitor fields regularly for early problem detection. 3. Maintain proper soil fertility and pH. 4. Use appropriate irrigation practices. 5. Implement integrated pest management strategies.",
+        "Treatment": "No treatment required. Focus on preventive measures including crop rotation, proper hilling, and selecting resistant varieties for future plantings."
+    },
+    "Raspberry___healthy": {
+        "Cause": "No disease detected. Canes and foliage appear normal and healthy.",
+        "Recommendation": "1. Maintain proper pruning of floricanes after harvest. 2. Control weeds that harbor pests and diseases. 3. Provide adequate but not excessive nitrogen. 4. Use trellising for good air circulation. 5. Remove and destroy old canes promptly.",
+        "Treatment": "No treatment needed. Continue cultural practices that promote plant health and prevent common raspberry diseases like gray mold and spur blight."
+    },
+    "Soybean___healthy": {
+        "Cause": "No disease symptoms present. Plants exhibit normal growth and development.",
+        "Recommendation": "1. Continue good field management practices. 2. Monitor for common soybean pests and diseases. 3. Maintain proper soil fertility. 4. Use appropriate planting dates and populations. 5. Keep field records for future reference.",
+        "Treatment": "No treatment necessary. Focus on preventive strategies including variety selection, crop rotation, and proper field drainage to maintain plant health."
+    },
+    "Squash___Powdery_mildew": {
+        "Cause": "Fungal disease caused by Podosphaera xanthii and Erysiphe cichoracearum. Spreads by wind-borne spores. Develops in warm (70-80°F) conditions with high humidity but not free water. More severe in shaded areas with poor air circulation. Can occur anytime during growing season.",
+        "Recommendation": "1. Plant resistant varieties when available. 2. Space plants properly for good air movement. 3. Avoid overhead watering. 4. Remove severely infected leaves early. 5. Position plants in full sun locations.",
+        "Treatment": "At first sign of white spots, apply horticultural oil, potassium bicarbonate, or sulfur. Chemical options include myclobutanil or trifloxystrobin. Apply every 7-10 days as needed. For organic control, use milk sprays (1 part milk to 9 parts water) or baking soda solutions."
+    },
+    "Strawberry___Leaf_scorch": {
+        "Cause": "Fungal disease caused by Diplocarpon earlianum. Overwinters in infected leaves. Spreads by splashing water and contaminated equipment. Develops in cool, wet weather. More severe in dense plantings with poor air circulation. Can weaken plants and reduce winter hardiness.",
+        "Recommendation": "1. Plant resistant varieties like 'Allstar' or 'Jewel'. 2. Remove and destroy old infected leaves after harvest. 3. Improve air circulation through proper spacing. 4. Use drip irrigation instead of overhead. 5. Renovate beds annually to maintain plant vigor.",
+        "Treatment": "Apply fungicides beginning at first leaf growth in spring. Use captan, thiophanate-methyl, or myclobutanil. Continue every 10-14 days during cool, wet periods. For organic production, use copper-based fungicides or bicarbonate products. Time applications before expected rain."
+    },
+    "Strawberry___healthy": {
+        "Cause": "No disease detected. Plants show normal growth and fruit production.",
+        "Recommendation": "1. Continue current management practices. 2. Monitor regularly for early signs of problems. 3. Maintain proper renovation schedule. 4. Ensure adequate winter protection in cold regions. 5. Use appropriate fertilization for your soil type.",
+        "Treatment": "No treatment needed. Maintain preventive program for common strawberry diseases appropriate for your growing conditions and region."
+    },
+    "Tomato___Bacterial_spot": {
+        "Cause": "Bacterial disease caused by Xanthomonas species. Spread by infected seeds, transplants, or splashing water. Enters through natural openings or wounds. Develops rapidly in warm (75-90°F), wet, humid conditions. Can survive on plant debris and equipment.",
+        "Recommendation": "1. Use certified disease-free seeds and transplants. 2. Practice 2-3 year crop rotation. 3. Avoid overhead irrigation. 4. Space plants for good air circulation. 5. Remove and destroy infected plant debris after harvest.",
+        "Treatment": "Copper-based bactericides applied preventively may reduce spread. Use at 7-10 day intervals during favorable conditions. Combine copper with mancozeb for better efficacy. Actigard (acibenzolar-S-methyl) can induce systemic resistance. Start before symptoms appear."
+    },
+    "Tomato___Early_blight": {
+        "Cause": "Fungal disease caused by Alternaria solani. Overwinters in plant debris and soil. Spread by wind, rain, and contaminated equipment. Development favored by warm temperatures (75-85°F) with high humidity or dew. Older leaves most susceptible. Stress increases severity.",
+        "Recommendation": "1. Plant resistant varieties when available. 2. Use stake and weave system for better air circulation. 3. Mulch to prevent soil splashing. 4. Remove lower leaves as plant grows. 5. Practice 3-year crop rotation.",
+        "Treatment": "Begin fungicide applications when first fruit clusters form. Use chlorothalonil, mancozeb, or azoxystrobin. Apply every 7-14 days depending on weather. Organic options: copper fungicides, Bacillus subtilis, or potassium bicarbonate. Ensure good coverage of lower leaves."
+    },
+    "Tomato___Late_blight": {
+        "Cause": "Oomycete disease caused by Phytophthora infestans. Requires living plant tissue to survive. Spreads rapidly in cool (60-70°F), wet conditions with high humidity. Can destroy entire plantings in days. Spores travel long distances by wind.",
+        "Recommendation": "1. Plant resistant varieties like 'Mountain Magic' or 'Defiant'. 2. Use certified disease-free transplants. 3. Space plants for maximum air movement. 4. Avoid overhead irrigation. 5. Remove and destroy infected plants immediately.",
+        "Treatment": "Apply protective fungicides before infection occurs. Use chlorothalonil, mancozeb, or fixed copper. When disease is present, use systemic fungicides like mefenoxam or fluopicolide. Apply every 5-7 days during high-risk periods. Follow anti-resistance strategies."
+    },
+    "Tomato___Leaf_Mold": {
+        "Cause": "Fungal disease caused by Passalora fulva (formerly Fulvia fulva). Primarily occurs in greenhouse or high tunnel production. Develops in high humidity (>85%) with moderate temperatures (70-75°F). Spreads by air currents, workers, and contaminated equipment.",
+        "Recommendation": "1. Plant resistant varieties with Cf genes. 2. Increase air circulation with fans and proper spacing. 3. Ventilate greenhouses to reduce humidity. 4. Avoid overhead watering. 5. Remove and destroy infected leaves promptly.",
+        "Treatment": "Apply fungicides at first sign of disease. Use chlorothalonil, mancozeb, or copper-based products. Biological controls include Bacillus subtilis or Streptomyces lydicus. Apply to both leaf surfaces. Time applications to maintain protection during humid periods."
+    },
+    "Tomato___Septoria_leaf_spot": {
+        "Cause": "Fungal disease caused by Septoria lycopersici. Overwinters in infected plant debris. Spread by splashing water, workers, and equipment. Development favored by moderate temperatures (60-80°F) with high humidity or leaf wetness. Lower leaves infected first.",
+        "Recommendation": "1. Practice 2-3 year crop rotation. 2. Stake plants for better air circulation. 3. Mulch to prevent soil splashing. 4. Remove lower leaves as plant grows. 5. Destroy infected plant debris after harvest.",
+        "Treatment": "Begin fungicide applications when first symptoms appear. Use chlorothalonil, mancozeb, or copper-based products. Apply every 7-10 days during favorable conditions. Organic options: copper fungicides or Bacillus subtilis. Remove severely infected lower leaves to reduce inoculum."
+    },
+    "Tomato___Spider_mites Two-spotted_spider_mite": {
+        "Cause": "Arachnid pest (Tetranychus urticae), not a disease. Thrives in hot, dry conditions. Rapid reproduction with generation time of 5-20 days depending on temperature. Damage caused by feeding that removes chlorophyll. More severe on water-stressed plants.",
+        "Recommendation": "1. Monitor regularly with hand lens for early detection. 2. Maintain adequate soil moisture. 3. Avoid excessive nitrogen fertilization. 4. Use reflective mulches in problem areas. 5. Encourage natural enemies like predatory mites.",
+        "Treatment": "Apply miticides when mites exceed threshold levels. Use abamectin, bifenazate, or spiromesifen. For organic control, use insecticidal soap, horticultural oil, or neem oil. Ensure good coverage of leaf undersides. Rotate miticide classes to prevent resistance."
+    },
+    "Tomato___Target_Spot": {
+        "Cause": "Fungal disease caused by Corynespora cassiicola. Overwinters in plant debris and can infect many crop species. Spread by wind, rain, and contaminated equipment. Development favored by warm temperatures (75-85°F) with high humidity or prolonged leaf wetness.",
+        "Recommendation": "1. Practice 2-3 year crop rotation with non-hosts. 2. Space plants for good air circulation. 3. Remove and destroy crop residue after harvest. 4. Use drip irrigation instead of overhead. 5. Avoid working in wet plants.",
+        "Treatment": "Apply fungicides when first symptoms appear. Use chlorothalonil, mancozeb, or strobilurin products. Begin applications early and continue every 7-14 days during favorable conditions. Ensure thorough coverage of all plant parts. Follow label directions for specific products."
+    },
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+        "Cause": "Viral disease transmitted by silverleaf whitefly (Bemisia tabaci). Once acquired by whiteflies, they remain infectious for life. Virus persists in weed hosts between crops. Spread most rapid in warm conditions that favor whitefly reproduction and movement.",
+        "Recommendation": "1. Plant resistant varieties with Ty genes. 2. Use virus-free transplants. 3. Install UV-reflective mulches. 4. Control whiteflies with insecticides or biological control. 5. Remove and destroy infected plants to reduce virus source.",
+        "Treatment": "No cure for infected plants. Remove and destroy symptomatic plants. For prevention: apply systemic insecticides for whitefly control. Use imidacloprid, thiamethoxam, or pyriproxyfen. Use insect growth regulators to break whitefly life cycle. Implement area-wide whitefly management."
+    },
+    "Tomato___Tomato_mosaic_virus": {
+        "Cause": "Viral disease caused by Tobacco mosaic virus (TMV). Extremely stable virus that persists in plant debris, soil, and on contaminated equipment. Spread by mechanical transmission through workers' hands, tools, and plant contact. Not insect-vectored.",
+        "Recommendation": "1. Plant resistant varieties with Tm-2 genes. 2. Wash hands with soap before handling plants. 3. Disinfect tools with 10% bleach solution. 4. Avoid smoking or using tobacco around tomatoes. 5. Remove and destroy infected plants promptly.",
+        "Treatment": "No cure for infected plants. Remove and destroy symptomatic plants. For prevention: use virus-free seeds and transplants. Implement strict sanitation practices. Avoid planting tomatoes where tobacco has been grown. Rotate with non-host crops for 2 years."
+    },
+    "Tomato___healthy": {
+        "Cause": "No disease or pest problems detected. Plants show vigorous growth and normal fruit development.",
+        "Recommendation": "1. Continue current management practices. 2. Monitor regularly for early problem detection. 3. Maintain proper irrigation and fertilization. 4. Use stake and prune system for better air circulation. 5. Keep records of plant performance and any issues.",
+        "Treatment": "No treatment needed. Maintain preventive program for common tomato diseases and pests appropriate for your growing conditions and region."
+    }
+}

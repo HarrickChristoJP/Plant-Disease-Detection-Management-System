@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmConnect - Farmer Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #8BC34A;
+            --accent-color: #FFD700;
+            --text-color: #2E2E2E;
+            --background-color: #F5F5F5;
+            --card-color: #FFFFFF;
+            --alert-color: #FF5722;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(to bottom, #F5F5F5, #E8F5E9);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0 3rem;
+            text-align: center;
+            background: linear-gradient(to right, rgba(76, 175, 80, 0.15), rgba(139, 195, 74, 0.15));
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            color: #444;
+        }
+
+        .search-bar {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            box-shadow: var(--box-shadow);
+            border-radius: 50px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .search-bar:focus-within {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 20px 25px;
+            border: none;
+            font-size: 1.1rem;
+            outline: none;
+            background: white;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .search-bar button:hover {
+            background-color: #3d8c40;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px solid rgba(76, 175, 80, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-title-icon {
+            font-size: 1.8rem;
+        }
+
+        .see-all {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 16px;
+            border-radius: 30px;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .see-all:hover {
+            color: white;
+            background: var(--primary-color);
+        }
+
+        /* Discussion Section */
+        .discussion-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .discussion-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .discussion-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            background: white;
+        }
+
+        .discussion-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .discussion-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+        }
+
+        .discussion-content p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .discussion-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .discussion-tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Blogs Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            background: white;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .blog-content {
+            padding: 1.8rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hot News Section */
+        .hot-news {
+            background: linear-gradient(to bottom, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+            border-left: 6px solid var(--accent-color);
+        }
+
+        .news-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .news-item:hover {
+            background: rgba(255, 255, 255, 0.7);
+            padding-left: 10px;
+            border-radius: 8px;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #3d8c40;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e6c200;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(76, 175, 80, 0.15);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Events Section */
+        .event-item {
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .event-item:hover {
+            padding-left: 10px;
+        }
+
+        .event-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .event-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .event-date {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .event-description {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .discussion-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>🌱 FarmConnect Community</h1>
+            <p>Connect with fellow farmers, share knowledge, solve problems, and stay updated with the latest agricultural news.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search discussions, blogs, or farmers...">
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Discussions Section -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-title-icon">💬</span>
+                            Local Discussions
+                        </h2>
+                        <a href="#" class="see-all">View All</a>
+                    </div>
+                    <div class="discussion-list">
+                        <div class="discussion-item">
+                            <div class="discussion-icon">❓</div>
+                            <div class="discussion-content">
+                                <h3>Tomato blight treatment recommendations?</h3>
+                                <p>My tomato plants are showing signs of early blight with yellowing leaves and dark spots. What organic treatments have worked for you in the past?</p>
+                                <div class="discussion-meta">
+                                    <span>By Rajesh Kumar</span>
+                                    <span>2 hours ago</span>
+                                    <span class="discussion-tag">Problem</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discussion-item">
+                            <div class="discussion-icon">🤝</div>
+                            <div class="discussion-content">
+                                <h3>Looking to share harvesting equipment</h3>
+                                <p>I have a combine harvester available next week. Anyone in the Palwal district interested in sharing costs and transportation?</p>
+                                <div class="discussion-meta">
+                                    <span>By Amit Singh</span>
+                                    <span>5 hours ago</span>
+                                    <span class="discussion-tag">Networking</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discussion-item">
+                            <div class="discussion-icon">💡</div>
+                            <div class="discussion-content">
+                                <h3>Drip irrigation setup tips for small farms</h3>
+                                <p>Just installed a drip system on my 2-acre farm. Sharing what I learned about water pressure, spacing, and maintenance for optimal results.</p>
+                                <div class="discussion-meta">
+                                    <span>By Priya Sharma</span>
+                                    <span>1 day ago</span>
+                                    <span class="discussion-tag">Help</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="#" class="btn btn-primary">Start New Discussion</a>
+                    </div>
+                </div>
+
+                <!-- Blogs & Updates Section -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-title-icon">📝</span>
+                            Blogs & Updates
+                        </h2>
+                        <a href="#" class="see-all">View All</a>
+                    </div>
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <div class="blog-image">🌾</div>
+                            <div class="blog-content">
+                                <h3>Organic Pest Control Methods That Actually Work</h3>
+                                <p>Discover effective natural solutions to protect your crops without harmful chemicals. Learn about companion planting and homemade sprays.</p>
+                                <div class="blog-meta">
+                                    <span>By Farm Expert</span>
+                                    <span>May 15</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-card">
+                            <div class="blog-image">💧</div>
+                            <div class="blog-content">
+                                <h3>Water Conservation Techniques for Dry Seasons</h3>
+                                <p>Learn how to maximize your water usage during drought conditions with innovative irrigation and soil management practices.</p>
+                                <div class="blog-meta">
+                                    <span>By Water Management Dept</span>
+                                    <span>May 12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-card">
+                            <div class="blog-image">📈</div>
+                            <div class="blog-content">
+                                <h3>Market Trends: What Crops Are in Demand This Season</h3>
+                                <p>Stay ahead of the market with our analysis of current agricultural trends and consumer preferences for the upcoming season.</p>
+                                <div class="blog-meta">
+                                    <span>By Market Analyst</span>
+                                    <span>May 10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Hot News Section -->
+                <div class="card hot-news">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-title-icon">🔥</span>
+                            Hot News & Alerts
+                        </h2>
+                    </div>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <h3>Government announces new subsidy for organic fertilizers</h3>
+                            <p>Farmers can now apply for up to 50% subsidy on certified organic inputs through the new Krishi Vikas portal.</p>
+                            <div class="news-meta">
+                                <span>2 hours ago</span>
+                                <span style="color: var(--alert-color); font-weight: 500;">Important</span>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <h3>Weather alert: Heavy rainfall expected in northern regions</h3>
+                            <p>Prepare your fields for potential flooding in the next 48 hours. Advisory for crop protection issued.</p>
+                            <div class="news-meta">
+                                <span>5 hours ago</span>
+                                <span style="color: var(--alert-color); font-weight: 500;">Alert</span>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <h3>New mobile app launched for direct farmer-buyer connections</h3>
+                            <p>Cut out middlemen with this government-supported platform that connects farmers directly with retailers.</p>
+                            <div class="news-meta">
+                                <span>1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Stats -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-title-icon">📊</span>
+                            Community Stats
+                        </h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">12,458</div>
+                            <div class="stat-label">Active Farmers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">843</div>
+                            <div class="stat-label">Discussions This Month</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">2,147</div>
+                            <div class="stat-label">Problems Solved</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">18</div>
+                            <div class="stat-label">Your Contributions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-title-icon">📅</span>
+                            Upcoming Events
+                        </h2>
+                    </div>
+                    <div>
+                        <div class="event-item">
+                            <div class="event-date">June 5, 2023 | 10:00 AM</div>
+                            <h3>Organic Farming Workshop</h3>
+                            <p class="event-description">Learn sustainable practices from industry experts at this hands-on workshop.</p>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">Every Saturday | 8:00 AM - 2:00 PM</div>
+                            <h3>Local Farmers Market</h3>
+                            <p class="event-description">Sell your produce directly to consumers at the community farmers market.</p>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">June 12, 2023 | 9:00 AM</div>
+                            <h3>Crop Insurance Seminar</h3>
+                            <p class="event-description">Understand the latest government schemes for crop insurance and protection.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary" style="width: 100%; text-align: center; margin-top: 1.5rem;">View All Events</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><span class="footer-logo">🌱</span> FarmConnect</h3>
+                    <p>Connecting farmers for knowledge sharing, problem solving, and agricultural growth.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy;   FarmConnect. All rights reserved. | Growing Together, Harvesting Success
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
