@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FarmConnect - Marketplace</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4CAF50;
-            --secondary: #8BC34A;
-            --accent: #FFD700;
-            --text: #2E2E2E;
-            --background: #F5F5F5;
-            --card: #FFFFFF;
-            --alert: #FF5722;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --radius: 12px;
-            --fertilizer: #8BC34A;
-            --pesticide: #FF9800;
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+            --secondary: #34d399;
+            --accent: #f59e0b;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --background: #f8fafc;
+            --bg-gradient: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+            --card: rgba(255, 255, 255, 0.7);
+            --card-solid: #ffffff;
+            --alert: #ef4444;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --shadow-hover: 0 20px 25px -5px rgba(16, 185, 129, 0.15), 0 10px 10px -5px rgba(16, 185, 129, 0.04);
+            --radius: 20px;
+            --radius-sm: 12px;
+            --fertilizer: #0ea5e9;
+            --pesticide: #f59e0b;
+            --border-glass: 1px solid rgba(255, 255, 255, 0.5);
         }
         
         * {
@@ -28,11 +36,13 @@
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text);
-            background: linear-gradient(to bottom, var(--background), #E8F5E9);
+            background: var(--bg-gradient);
+            background-attachment: fixed;
             min-height: 100vh;
             line-height: 1.6;
+            margin: 0;
         }
         
         .container {
@@ -43,10 +53,16 @@
         
         /* Header Styles */
         header {
-            background-color: var(--primary);
-            color: white;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--text);
             padding: 16px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: var(--border-glass);
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .header-content {
@@ -56,11 +72,13 @@
         }
         
         .logo {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 26px;
             display: flex;
             align-items: center;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
         }
         
         .logo-icon {
@@ -76,11 +94,19 @@
         
         .search-bar {
             display: flex;
-            background: white;
+            background: rgba(248, 250, 252, 0.8);
+            border: 1px solid #e2e8f0;
             border-radius: 50px;
             overflow: hidden;
-            padding: 8px 16px;
-            width: 300px;
+            padding: 8px 20px;
+            width: 320px;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .search-bar:focus-within {
+            background: white;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
         }
         
         .search-bar input {
@@ -88,7 +114,8 @@
             outline: none;
             flex: 1;
             padding: 0 10px;
-            font-family: 'Roboto', sans-serif;
+            background: transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
         .search-bar button {
@@ -116,12 +143,15 @@
             background: var(--alert);
             color: white;
             border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            font-size: 11px;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 2px 5px rgba(239, 68, 68, 0.4);
+            border: 2px solid white;
         }
         
         /* Main Content */
@@ -130,8 +160,9 @@
         }
         
         .page-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 32px;
+            font-weight: 700;
             margin-bottom: 30px;
             color: var(--text);
             display: flex;
@@ -147,32 +178,42 @@
         .nav-tabs {
             display: flex;
             margin-bottom: 30px;
-            border-bottom: 1px solid #e0e0e0;
-            background-color: var(--card);
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
+            border: var(--border-glass);
             overflow: hidden;
+            padding: 6px;
+            gap: 8px;
         }
         
         .nav-tab {
             flex: 1;
-            padding: 16px 24px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
+            padding: 14px 24px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
             cursor: pointer;
             text-align: center;
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-light);
+            border-radius: var(--radius-sm);
+            border-bottom: none;
         }
         
         .nav-tab.active {
-            border-bottom: 3px solid var(--primary);
-            color: var(--primary);
-            background-color: rgba(76, 175, 80, 0.05);
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+            border-bottom: none;
         }
         
         .nav-tab:hover:not(.active) {
-            background-color: rgba(76, 175, 80, 0.02);
+            background: rgba(16, 185, 129, 0.05);
+            color: var(--primary);
         }
         
         /* Tab Content */
@@ -189,36 +230,44 @@
             display: flex;
             margin-bottom: 24px;
             border-radius: var(--radius);
-            overflow: hidden;
-            background-color: var(--card);
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            border: var(--border-glass);
             box-shadow: var(--shadow);
+            padding: 6px;
+            gap: 8px;
         }
         
         .category-tab {
             flex: 1;
             padding: 12px 16px;
             text-align: center;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+            color: var(--text-light);
         }
         
         .category-tab.active {
-            background-color: var(--primary);
-            color: white;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.2);
         }
         
         /* Filter Section */
         .filter-section {
-            background-color: var(--card);
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            border: var(--border-glass);
             border-radius: var(--radius);
-            padding: 20px;
+            padding: 20px 24px;
             margin-bottom: 24px;
             box-shadow: var(--shadow);
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
             align-items: center;
         }
         
@@ -250,17 +299,24 @@
         }
         
         .product-card {
-            background-color: var(--card);
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: var(--border-glass);
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(16, 185, 129, 0.3);
+            z-index: 10;
         }
         
         .product-badge {
@@ -371,24 +427,32 @@
         }
         
         .btn-primary {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             flex: 1;
             margin-right: 8px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+            font-weight: 600;
         }
         
         .btn-primary:hover {
-            background-color: #3d8b40;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
         }
         
         .btn-secondary {
-            background-color: var(--accent);
-            color: var(--text);
-            width: 40px;
+            background: white;
+            color: var(--text-light);
+            border: 1px solid #e2e8f0;
+            width: 44px;
         }
         
         .btn-secondary:hover {
-            background-color: #e6c200;
+            background: #f8fafc;
+            color: var(--alert);
+            border-color: #f1f5f9;
+            transform: translateY(-2px);
         }
         
         /* Cart Sidebar */
@@ -398,10 +462,13 @@
             right: -400px;
             width: 380px;
             height: 100vh;
-            background: white;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            border-left: var(--border-glass);
             z-index: 1000;
-            transition: right 0.3s ease;
+            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
         }
@@ -587,11 +654,17 @@
         
         /* Product Tracker */
         .tracker-section {
-            background-color: var(--card);
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            border: var(--border-glass);
             border-radius: var(--radius);
-            padding: 24px;
+            padding: 30px;
             box-shadow: var(--shadow);
             margin-bottom: 40px;
+            transition: transform 0.3s;
+        }
+        .tracker-section:hover {
+            box-shadow: var(--shadow-hover);
         }
         
         .tracker-header {
@@ -671,10 +744,25 @@
         }
         
         .analytics-card {
-            background-color: var(--card);
+            background: linear-gradient(135deg, var(--card) 0%, rgba(255,255,255,0.4) 100%);
+            backdrop-filter: blur(10px);
+            border: var(--border-glass);
             border-radius: var(--radius);
-            padding: 24px;
+            padding: 28px;
             box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .analytics-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--primary);
+        }
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
         
         .analytics-title {
@@ -755,10 +843,20 @@
         
         /* Footer */
         footer {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #064e3b 100%);
             color: white;
-            padding: 40px 0 20px;
-            margin-top: 60px;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+            position: relative;
+        }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -40px; left: 0; right: 0; height: 80px;
+            background: var(--bg-gradient);
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            z-index: 10;
         }
         
         .footer-content {
@@ -887,13 +985,15 @@
         }
         
         .checkout-container {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: var(--border-glass);
             border-radius: var(--radius);
             width: 90%;
             max-width: 800px;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         
         .checkout-header {
@@ -1117,12 +1217,19 @@
         .quick-action {
             flex: 1;
             background: var(--card);
+            backdrop-filter: blur(10px);
+            border: var(--border-glass);
             border-radius: var(--radius);
-            padding: 20px;
+            padding: 24px 20px;
             text-align: center;
             box-shadow: var(--shadow);
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+        }
+        .quick-action:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(16, 185, 129, 0.3);
         }
         
         .quick-action:hover {
@@ -1145,6 +1252,54 @@
             font-size: 14px;
             color: #666;
         }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* New Advanced Features CSS */
+        .hero-banner {
+            width: 100%; border-radius: var(--radius);
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.9) 0%, rgba(16, 185, 129, 0.8) 100%), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            padding: 80px 60px; color: white; margin-bottom: 50px;
+            display: flex; flex-direction: column; justify-content: center;
+            box-shadow: var(--shadow); position: relative; overflow: hidden;
+        }
+        .hero-title { font-size: 48px; font-weight: 800; margin-bottom: 15px; font-family: 'Outfit', sans-serif; text-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .hero-subtitle { font-size: 20px; max-width: 600px; margin-bottom: 30px; opacity: 0.9; }
+        .btn-hero {
+            background: white; color: var(--primary-dark); padding: 14px 32px; border-radius: 50px;
+            font-weight: 700; font-size: 18px; border: none; cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); font-family: 'Outfit', sans-serif;
+        }
+        .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0,0,0,0.15); }
+
+        .testimonials { margin: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-title { font-family: 'Outfit', sans-serif; font-size: 36px; color: var(--text); margin-bottom: 15px; }
+        .section-desc { color: var(--text-light); font-size: 18px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .testimonial-card {
+            background: var(--card); backdrop-filter: blur(10px); border: var(--border-glass);
+            padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); position: relative;
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+        .quote-icon { font-size: 50px; color: var(--primary-light); position: absolute; top: 20px; right: 20px; opacity: 0.5; }
+        .client-info { display: flex; align-items: center; gap: 15px; margin-top: 20px; }
+        .client-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--primary-light); color: var(--primary-dark); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; }
+        .client-name { font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--text); display: block; }
+        .client-role { font-size: 14px; color: var(--text-light); }
+        
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(209, 250, 229, 0.4) 100%);
+            border-radius: var(--radius); padding: 60px 40px; text-align: center; margin: 80px 0;
+            border: var(--border-glass); box-shadow: var(--shadow); position: relative; overflow: hidden;
+        }
+        .nl-title { font-family: 'Outfit', sans-serif; font-size: 32px; color: var(--primary-dark); margin-bottom: 15px; }
+        .nl-desc { color: var(--primary-dark); font-size: 18px; margin-bottom: 30px; opacity: 0.8; }
+        .nl-form { display: flex; gap: 10px; background: white; padding: 6px; border-radius: 50px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .nl-input { flex: 1; border: none; padding: 12px 24px; border-radius: 50px; font-family: inherit; font-size: 16px; outline: none; }
+        .nl-btn { background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s; font-family: 'Outfit', sans-serif;}
+        .nl-btn:hover { background: var(--primary-dark); }
     </style>
 </head>
 <body>
@@ -1175,8 +1330,19 @@
         </div>
     </header>
 
+    <!-- Hero Banner -->
+    <div class="container">
+        <div class="hero-banner" data-aos="fade-down">
+            <div class="hero-content">
+                <h1 class="hero-title">Fresh Organic Produce Delivered to Your Door</h1>
+                <p class="hero-subtitle">Connect directly with local farmers and enjoy up to 30% savings on farm-fresh vegetables, crops, and organic fertilizers.</p>
+                <button class="btn-hero" onclick="document.querySelector('.products-grid').scrollIntoView({behavior: 'smooth'})">Shop Fresh Produce</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content -->
-    <div class="container main-content">
+    <div class="container main-content" data-aos="fade-up">
         <h1 class="page-title">
             <span class="page-title-icon">🛒</span>
             Marketplace
@@ -1959,8 +2125,65 @@
     <!-- Overlay for cart -->
     <div class="overlay"></div>
 
+    <!-- Testimonials Section -->
+    <div class="container testimonials" data-aos="fade-up">
+        <div class="section-header">
+            <h2 class="section-title">What Our Community Says</h2>
+            <p class="section-desc">Real stories from farmers and buyers growing together.</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <p class="testimonial-text">"FarmConnect changed how I sell my tomatoes. I get better prices and the buyers love the freshness. It's a win-win."</p>
+                <div class="client-info">
+                    <div class="client-avatar">R</div>
+                    <div>
+                        <span class="client-name">Rajesh Kumar</span>
+                        <span class="client-role">Local Farmer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <p class="testimonial-text">"The quality of organic compost I ordered was incredible. Delivered directly to my greenhouse on the same day!"</p>
+                <div class="client-info">
+                    <div class="client-avatar">A</div>
+                    <div>
+                        <span class="client-name">Anjali Singh</span>
+                        <span class="client-role">Urban Gardener</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <p class="testimonial-text">"I save almost ₹2000 every month buying vegetables directly from the farms. The platform is extremely smooth."</p>
+                <div class="client-info">
+                    <div class="client-avatar">M</div>
+                    <div>
+                        <span class="client-name">Meera Patel</span>
+                        <span class="client-role">Regular Buyer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="container" data-aos="zoom-in" data-aos-offset="100">
+        <div class="newsletter">
+            <div class="newsletter-inner">
+                <h2 class="nl-title">Stay Updated on Fresh Deals</h2>
+                <p class="nl-desc">Subscribe to our newsletter and get ₹100 off your first direct-from-farm order.</p>
+                <form class="nl-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                    <input type="email" class="nl-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="nl-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer>
+    <footer data-aos="fade-up">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -1969,7 +2192,7 @@
                 </div>
             </div>
             <div class="copyright">
-                &copy; HACK-AI-THON 2.0|| GenZ Coderz || SJCE.
+                &copy;Plant Disease Detection & Management - Harrick Christo JP
             </div>
         </div>
     </footer>
@@ -2202,5 +2425,25 @@
             setupCartRecovery();
         });
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <!-- Google Translate Element -->
+<div id="google_translate_element" style="position: fixed; top: 15px; right: 15px; background: #4CAF50; border-radius: 40px; padding: 4px 12px; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,ta,te,ml,bn,kn,mr,gu,pa'
+    }, 'google_translate_element');
+}
+</script>
 </body>
 </html>

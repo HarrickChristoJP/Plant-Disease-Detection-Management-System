@@ -115,20 +115,7 @@
             font-size: 1.5rem;
         }
 
-        /* Language Switcher */
-        .language-switcher {
-            margin-right: 20px;
-        }
-
-        .language-switcher select {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            background: white;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        /* Plantix-style Weather Card */
+        /* Weather Card */
         .weather-card {
             background-color: #FFFFFF;
             border-radius: 12px;
@@ -174,7 +161,6 @@
             font-size: 0.9rem;
         }
 
-        /* Location Accuracy */
         .location-accuracy {
             font-size: 0.8rem;
             color: #666;
@@ -635,28 +621,28 @@
     <!-- Sidebar Navigation -->
     <div class="sidebar">
         <div class="logo">
-            <h1><i class="fas fa-seedling"></i> <span data-i18n="portal-name">Farmer Portal</span></h1>
+            <h1><i class="fas fa-seedling"></i> <span>Farmer Portal</span></h1>
         </div>
         <ul class="nav-menu">
             <li class="nav-item active" data-page="home">
                 <i class="fas fa-tractor"></i>
-                <span data-i18n="your-crops">Your Crops</span>
+                <span>Your Crops</span>
             </li>
             <li class="nav-item" data-page="disease">
                 <i class="fas fa-heartbeat"></i>
-                <span data-i18n="heal-crops">Heal Your Crops</span>
+                <span>Heal Your Crops</span>
             </li>
             <li class="nav-item" data-page="community">
                 <i class="fas fa-users"></i>
-                <span data-i18n="community">Community</span>
+                <span>Community</span>
             </li>
             <li class="nav-item" data-page="market">
                 <i class="fas fa-shopping-cart"></i>
-                <span data-i18n="market">Market</span>
+                <span>Market</span>
             </li>
             <li class="nav-item" data-page="profile">
                 <i class="fas fa-user"></i>
-                <span data-i18n="profile">You</span>
+                <span>You</span>
             </li>
         </ul>
     </div>
@@ -666,21 +652,13 @@
         <!-- Home Page -->
         <div id="homePage" class="page">
             <div class="page-header">
-                <h1 class="page-title" data-i18n="dashboard-title">Your Crops Dashboard</h1>
+                <h1 class="page-title">Your Crops Dashboard</h1>
                 <div class="user-info">
-                    <div class="language-switcher">
-                        <select id="languageSelect">
-                            <option value="en">English</option>
-                            <option value="hi">हिन्दी (Hindi)</option>
-                            <option value="ta">தமிழ் (Tamil)</option>
-                            <option value="ml">മലയാളം (Malayalam)</option>
-                        </select>
-                    </div>
                     <div class="user-avatar">
                         <i class="fas fa-user"></i>
                     </div>
                     <div>
-                        <div class="user-name" data-i18n="welcome">Welcome, Farmer!</div>
+                        <div class="user-name">Welcome, Farmer!</div>
                         <div class="user-status">
                             <span id="userLocation">Detecting your location...</span>
                             <div class="location-accuracy" id="locationAccuracy"></div>
@@ -702,7 +680,7 @@
                 </div>
             </div>
 
-            <h2 style="margin: 30px 0 20px; font-family: 'Poppins', sans-serif; color: #4CAF50;" data-i18n="quick-actions">Quick Actions</h2>
+            <h2 style="margin: 30px 0 20px; font-family: 'Poppins', sans-serif; color: #4CAF50;">Quick Actions</h2>
             
             <div class="features">
                 <!-- Fertilizer Calculator Card -->
@@ -711,13 +689,13 @@
                         <div class="feature-icon">
                             <i class="fas fa-calculator"></i>
                         </div>
-                        <h2 class="feature-title" data-i18n="fertilizer-calculator">Fertilizer Calculator</h2>
+                        <h2 class="feature-title">Fertilizer Calculator</h2>
                     </div>
-                    <p class="feature-desc" data-i18n="fertilizer-desc">Calculate the right amount of fertilizer for your crops based on area and soil conditions.</p>
+                    <p class="feature-desc">Calculate the right amount of fertilizer for your crops based on area and soil conditions.</p>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-crop-specific">Crop-specific recommendations</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-soil-analysis">Soil nutrient analysis</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-cost-estimation">Cost estimation</span></li>
+                        <li><i class="fas fa-check"></i> <span>Crop-specific recommendations</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soil nutrient analysis</span></li>
+                        <li><i class="fas fa-check"></i> <span>Cost estimation</span></li>
                     </ul>
                 </div>
 
@@ -727,13 +705,13 @@
                         <div class="feature-icon">
                             <i class="fas fa-bug"></i>
                         </div>
-                        <h2 class="feature-title" data-i18n="pest-control">Pest Control</h2>
+                        <h2 class="feature-title">Pest Control</h2>
                     </div>
-                    <p class="feature-desc" data-i18n="pest-desc">Identify pests and get recommendations for safe and effective control measures.</p>
+                    <p class="feature-desc">Identify pests and get recommendations for safe and effective control measures.</p>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-pesticide-calc">Pesticide calculator</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-expert-tips">Expert tips</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-safety-guidelines">Safety guidelines</span></li>
+                        <li><i class="fas fa-check"></i> <span>Pesticide calculator</span></li>
+                        <li><i class="fas fa-check"></i> <span>Expert tips</span></li>
+                        <li><i class="fas fa-check"></i> <span>Safety guidelines</span></li>
                     </ul>
                 </div>
 
@@ -743,13 +721,13 @@
                         <div class="feature-icon">
                             <i class="fas fa-video"></i>
                         </div>
-                        <h2 class="feature-title" data-i18n="video-library">Video Library</h2>
+                        <h2 class="feature-title">Video Library</h2>
                     </div>
-                    <p class="feature-desc" data-i18n="video-desc">Access educational videos, farmer uploads, and product demonstrations.</p>
+                    <p class="feature-desc">Access educational videos, farmer uploads, and product demonstrations.</p>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-tutorials">Farming tutorials</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-community-uploads">Community uploads</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feature-product-reviews">Product reviews</span></li>
+                        <li><i class="fas fa-check"></i> <span>Farming tutorials</span></li>
+                        <li><i class="fas fa-check"></i> <span>Community uploads</span></li>
+                        <li><i class="fas fa-check"></i> <span>Product reviews</span></li>
                     </ul>
                 </div>
             </div>
@@ -757,10 +735,10 @@
             <!-- Fertilizer Calculator Section (Hidden by default) -->
             <div class="calculator-section" id="fertilizerCalculator">
                 <div class="feature-card">
-                    <h2 class="feature-title" style="margin-bottom: 20px;" data-i18n="fertilizer-calculator">Fertilizer Calculator</h2>
+                    <h2 class="feature-title" style="margin-bottom: 20px;">Fertilizer Calculator</h2>
                     
                     <div class="form-group">
-                        <label for="fert-crop" data-i18n="label-crop">Crop</label>
+                        <label>Crop</label>
                         <select id="fert-crop">
                             <option value="rice">Rice</option>
                             <option value="wheat">Wheat</option>
@@ -773,11 +751,11 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="fert-area" data-i18n="label-area">Area</label>
+                            <label>Area</label>
                             <input id="fert-area" type="number" min="0" step="0.01" placeholder="e.g., 1" />
                         </div>
                         <div style="width: 135px">
-                            <label for="fert-unit" data-i18n="label-unit">Unit</label>
+                            <label>Unit</label>
                             <select id="fert-unit">
                                 <option value="ha">Hectares</option>
                                 <option value="acre">Acres</option>
@@ -786,7 +764,7 @@
                         </div>
                     </div>
 
-                    <label data-i18n="label-soil-test">Optional: Soil Test (N, P, K in kg/ha)</label>
+                    <label>Optional: Soil Test (N, P, K in kg/ha)</label>
                     <div class="row">
                         <input id="soil-n" type="number" placeholder="N" min="0" class="col" />
                         <input id="soil-p" type="number" placeholder="P" min="0" class="col" />
@@ -794,9 +772,9 @@
                     </div>
 
                     <div class="btn-group">
-                        <button id="fert-calc" class="btn btn-primary" data-i18n="button-calculate">Calculate</button>
-                        <button id="fert-reset" class="btn btn-secondary" data-i18n="button-reset">Reset</button>
-                        <button id="fert-explain-toggle" class="btn btn-secondary" data-i18n="button-explain">Why this amount?</button>
+                        <button id="fert-calc" class="btn btn-primary">Calculate</button>
+                        <button id="fert-reset" class="btn btn-secondary">Reset</button>
+                        <button id="fert-explain-toggle" class="btn btn-secondary">Why this amount?</button>
                     </div>
 
                     <div id="fert-result" class="results">
@@ -812,10 +790,10 @@
             <!-- Pest Control Section (Hidden by default) -->
             <div class="calculator-section" id="pestControlCalculator">
                 <div class="feature-card">
-                    <h2 class="feature-title" style="margin-bottom: 20px;" data-i18n="pest-control">Pest Calculator & Tips</h2>
+                    <h2 class="feature-title" style="margin-bottom: 20px;">Pest Calculator & Tips</h2>
                     
                     <div class="form-group">
-                        <label for="pest-crop" data-i18n="label-crop">Crop</label>
+                        <label>Crop</label>
                         <select id="pest-crop">
                             <option value="rice">Rice</option>
                             <option value="wheat">Wheat</option>
@@ -826,7 +804,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="pest-type" data-i18n="label-pest-type">Pest / Disease Type</label>
+                        <label>Pest / Disease Type</label>
                         <select id="pest-type">
                             <option value="stem_borer">Stem Borer</option>
                             <option value="aphids">Aphids</option>
@@ -838,11 +816,11 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="infected-percent" data-i18n="label-infected-area">Estimated infected area (%)</label>
+                            <label>Estimated infected area (%)</label>
                             <input id="infected-percent" type="number" min="0" max="100" step="1" placeholder="e.g., 10" />
                         </div>
                         <div style="width: 160px">
-                            <label for="area-pest" data-i18n="label-unit">Area unit</label>
+                            <label>Area unit</label>
                             <select id="area-pest">
                                 <option value="ha">Hectares</option>
                                 <option value="acre">Acres</option>
@@ -853,30 +831,30 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="total-area" data-i18n="label-total-area">Total area (same unit)</label>
+                            <label>Total area (same unit)</label>
                             <input id="total-area" type="number" min="0" step="0.01" placeholder="e.g., 1.5" />
                         </div>
                         <div style="width: 160px">
-                            <label for="tank-size" data-i18n="label-tank-size">Spray tank size (litres)</label>
+                            <label>Spray tank size (litres)</label>
                             <input id="tank-size" type="number" min="1" step="1" value="200" />
                         </div>
                     </div>
 
-                    <div style="margin-top: 8px; color: #666; font-size: 0.9rem;" data-i18n="label-area-per-tank">Area that one full tank covers (ha). Change if you know exact coverage per tank.</div>
+                    <div style="margin-top: 8px; color: #666; font-size: 0.9rem;">Area that one full tank covers (ha). Change if you know exact coverage per tank.</div>
                     <div class="row" style="margin-top: 6px">
                         <div style="width: 160px">
-                            <label for="area-per-tank" data-i18n="label-area-per-tank">Area per tank (ha)</label>
+                            <label>Area per tank (ha)</label>
                             <input id="area-per-tank" type="number" min="0.001" step="0.001" value="0.1" />
                         </div>
                         <div style="flex: 1">
-                            <label for="pesticide-strength" data-i18n="label-pesticide-strength">Formulation strength (%)</label>
+                            <label>Formulation strength (%)</label>
                             <input id="pesticide-strength" type="number" min="0.1" step="0.1" value="36" />
                         </div>
                     </div>
 
                     <div class="btn-group">
-                        <button id="pest-calc" class="btn btn-primary" data-i18n="button-calculate-dose">Calculate Dose</button>
-                        <button id="pest-reset" class="btn btn-secondary" data-i18n="button-reset">Reset</button>
+                        <button id="pest-calc" class="btn btn-primary">Calculate Dose</button>
+                        <button id="pest-reset" class="btn btn-secondary">Reset</button>
                     </div>
 
                     <div id="pest-result" class="results">
@@ -887,26 +865,26 @@
 
                     <!-- Enhanced Tips Section -->
                     <div class="tips-section">
-                        <h3 style="margin-bottom: 15px; color: #4CAF50;" data-i18n="pest-management-tips">Pest Management Tips</h3>
+                        <h3 style="margin-bottom: 15px; color: #4CAF50;">Pest Management Tips</h3>
                         
                         <div class="tip-item">
-                            <div class="tip-title" data-i18n="tip-early-detection">Early Detection</div>
-                            <div data-i18n="tip-early-detection-desc">Regularly inspect crops for signs of pests. Early detection allows for more effective and less invasive control methods.</div>
+                            <div class="tip-title">Early Detection</div>
+                            <div>Regularly inspect crops for signs of pests. Early detection allows for more effective and less invasive control methods.</div>
                         </div>
                         
                         <div class="tip-item">
-                            <div class="tip-title" data-i18n="tip-cultural-controls">Cultural Controls</div>
-                            <div data-i18n="tip-cultural-controls-desc">Practice crop rotation, intercropping, and proper sanitation to disrupt pest life cycles and reduce infestations.</div>
+                            <div class="tip-title">Cultural Controls</div>
+                            <div>Practice crop rotation, intercropping, and proper sanitation to disrupt pest life cycles and reduce infestations.</div>
                         </div>
                         
                         <div class="tip-item">
-                            <div class="tip-title" data-i18n="tip-biological-controls">Biological Controls</div>
-                            <div data-i18n="tip-biological-controls-desc">Introduce natural predators like ladybugs for aphids or use biopesticides derived from natural materials.</div>
+                            <div class="tip-title">Biological Controls</div>
+                            <div>Introduce natural predators like ladybugs for aphids or use biopesticides derived from natural materials.</div>
                         </div>
                         
                         <div class="tip-item">
-                            <div class="tip-title" data-i18n="tip-chemical-controls">Chemical Controls</div>
-                            <div data-i18n="tip-chemical-controls-desc">Use pesticides as a last resort. Always follow label instructions, wear proper PPE, and observe pre-harvest intervals.</div>
+                            <div class="tip-title">Chemical Controls</div>
+                            <div>Use pesticides as a last resort. Always follow label instructions, wear proper PPE, and observe pre-harvest intervals.</div>
                         </div>
                     </div>
                 </div>
@@ -915,44 +893,44 @@
             <!-- Enhanced Video Library Section -->
             <div class="calculator-section" id="videoLibrarySection">
                 <div class="feature-card">
-                    <h2 class="feature-title" style="margin-bottom: 20px;" data-i18n="video-library">Video Library</h2>
+                    <h2 class="feature-title" style="margin-bottom: 20px;">Video Library</h2>
                     
                     <div class="tabs">
-                        <div class="tab active" data-tab="featured" data-i18n="tab-featured">Featured</div>
-                        <div class="tab" data-tab="youtube" data-i18n="tab-youtube">YouTube</div>
-                        <div class="tab" data-tab="custom" data-i18n="tab-custom">My Videos</div>
+                        <div class="tab active" data-tab="featured">Featured</div>
+                        <div class="tab" data-tab="youtube">YouTube</div>
+                        <div class="tab" data-tab="custom">My Videos</div>
                     </div>
 
                     <!-- Video Upload Section -->
                     <div class="video-upload-section">
-                        <h3 style="color: #4CAF50; margin-bottom: 15px;" data-i18n="upload-video">Add Custom Video</h3>
+                        <h3 style="color: #4CAF50; margin-bottom: 15px;">Add Custom Video</h3>
                         
                         <div class="form-group">
-                            <label data-i18n="label-video-source">Video Source</label>
+                            <label>Video Source</label>
                             <select id="videoSource" class="form-control">
                                 <option value="youtube">YouTube</option>
                                 <option value="vimeo">Vimeo</option>
-                                <option value="direct" data-i18n="option-direct">Direct URL</option>
+                                <option value="direct">Direct URL</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label data-i18n="label-video-url">Video URL or ID</label>
+                            <label>Video URL or ID</label>
                             <input type="text" id="videoUrl" placeholder="Enter YouTube URL, Vimeo URL, or direct video URL" class="form-control">
                         </div>
                         
                         <div class="form-group">
-                            <label data-i18n="label-video-title">Title</label>
+                            <label>Title</label>
                             <input type="text" id="videoTitle" placeholder="Enter video title" class="form-control">
                         </div>
                         
                         <div class="form-group">
-                            <label data-i18n="label-video-desc">Description</label>
+                            <label>Description</label>
                             <textarea id="videoDescription" placeholder="Enter video description" class="form-control" rows="3"></textarea>
                         </div>
                         
                         <button id="addCustomVideo" class="btn btn-primary" style="margin-top: 10px;">
-                            <i class="fas fa-plus"></i> <span data-i18n="button-add-video">Add Video to Library</span>
+                            <i class="fas fa-plus"></i> Add Video to Library
                         </button>
                     </div>
 
@@ -964,10 +942,10 @@
 
                     <div class="tab-content" id="youtubeTab">
                         <div class="form-group">
-                            <label for="youtubeSearch" data-i18n="label-search-yt">Search YouTube for farming videos</label>
+                            <label>Search YouTube for farming videos</label>
                             <div class="row">
                                 <input type="text" id="youtubeSearch" placeholder="Enter search terms..." class="col">
-                                <button id="searchYoutube" class="btn btn-primary" data-i18n="button-search">Search</button>
+                                <button id="searchYoutube" class="btn btn-primary">Search</button>
                             </div>
                         </div>
                         <div class="video-grid" id="youtubeVideos">
@@ -989,36 +967,36 @@
             <div class="unavailable-icon">
                 <i class="fas fa-heartbeat"></i>
             </div>
-            <h2 class="unavailable-title" data-i18n="unavailable-health-title">Crop Health Diagnostic</h2>
-            <p class="unavailable-text" data-i18n="unavailable-health-text">The crop health diagnostic feature is currently unavailable. Our AI-powered disease detection system is being enhanced for better accuracy.</p>
-            <button class="btn btn-primary back-to-home" data-i18n="button-back-home">Back to Home</button>
+            <h2 class="unavailable-title">Crop Health Diagnostic</h2>
+            <p class="unavailable-text">The crop health diagnostic feature is currently unavailable. Our AI-powered disease detection system is being enhanced for better accuracy.</p>
+            <button class="btn btn-primary back-to-home">Back to Home</button>
         </div>
 
         <div id="communityPage" class="page unavailable-page" style="display: none;">
             <div class="unavailable-icon">
                 <i class="fas fa-users"></i>
             </div>
-            <h2 class="unavailable-title" data-i18n="unavailable-community-title">Community Feature</h2>
-            <p class="unavailable-text" data-i18n="unavailable-community-text">The community feature is currently unavailable. Our team is working hard to bring farmers together in a collaborative space.</p>
-            <button class="btn btn-primary back-to-home" data-i18n="button-back-home">Back to Home</button>
+            <h2 class="unavailable-title">Community Feature</h2>
+            <p class="unavailable-text">The community feature is currently unavailable. Our team is working hard to bring farmers together in a collaborative space.</p>
+            <button class="btn btn-primary back-to-home">Back to Home</button>
         </div>
 
         <div id="marketPage" class="page unavailable-page" style="display: none;">
             <div class="unavailable-icon">
                 <i class="fas fa-shopping-cart"></i>
             </div>
-            <h2 class="unavailable-title" data-i18n="unavailable-market-title">Marketplace</h2>
-            <p class="unavailable-text" data-i18n="unavailable-market-text">The marketplace feature is currently under development. Soon you'll be able to buy and sell agricultural products directly.</p>
-            <button class="btn btn-primary back-to-home" data-i18n="button-back-home">Back to Home</button>
+            <h2 class="unavailable-title">Marketplace</h2>
+            <p class="unavailable-text">The marketplace feature is currently under development. Soon you'll be able to buy and sell agricultural products directly.</p>
+            <button class="btn btn-primary back-to-home">Back to Home</button>
         </div>
 
         <div id="profilePage" class="page unavailable-page" style="display: none;">
             <div class="unavailable-icon">
                 <i class="fas fa-user"></i>
             </div>
-            <h2 class="unavailable-title" data-i18n="unavailable-profile-title">Profile Section</h2>
-            <p class="unavailable-text" data-i18n="unavailable-profile-text">The profile management feature is currently unavailable. We're building a comprehensive profile system for farmers.</p>
-            <button class="btn btn-primary back-to-home" data-i18n="button-back-home">Back to Home</button>
+            <h2 class="unavailable-title">Profile Section</h2>
+            <p class="unavailable-text">The profile management feature is currently unavailable. We're building a comprehensive profile system for farmers.</p>
+            <button class="btn btn-primary back-to-home">Back to Home</button>
         </div>
     </div>
 
@@ -1034,458 +1012,6 @@
     </div>
 
     <script>
-        // ==================== MULTILINGUAL SUPPORT ====================
-        const translations = {
-            en: {
-                // Navigation
-                'portal-name': 'Farmer Portal',
-                'your-crops': 'Your Crops',
-                'heal-crops': 'Heal Your Crops',
-                'community': 'Community',
-                'market': 'Market',
-                'profile': 'You',
-                
-                // Dashboard
-                'dashboard-title': 'Your Crops Dashboard',
-                'welcome': 'Welcome, Farmer!',
-                'quick-actions': 'Quick Actions',
-                
-                // Feature Cards
-                'fertilizer-calculator': 'Fertilizer Calculator',
-                'fertilizer-desc': 'Calculate the right amount of fertilizer for your crops based on area and soil conditions.',
-                'pest-control': 'Pest Control',
-                'pest-desc': 'Identify pests and get recommendations for safe and effective control measures.',
-                'video-library': 'Video Library',
-                'video-desc': 'Access educational videos, farmer uploads, and product demonstrations.',
-                
-                // Feature list items
-                'feature-crop-specific': 'Crop-specific recommendations',
-                'feature-soil-analysis': 'Soil nutrient analysis',
-                'feature-cost-estimation': 'Cost estimation',
-                'feature-pesticide-calc': 'Pesticide calculator',
-                'feature-expert-tips': 'Expert tips',
-                'feature-safety-guidelines': 'Safety guidelines',
-                'feature-tutorials': 'Farming tutorials',
-                'feature-community-uploads': 'Community uploads',
-                'feature-product-reviews': 'Product reviews',
-                
-                // Calculator Labels
-                'label-crop': 'Crop',
-                'label-area': 'Area',
-                'label-unit': 'Unit',
-                'label-soil-test': 'Optional: Soil Test (N, P, K in kg/ha)',
-                'label-pest-type': 'Pest / Disease Type',
-                'label-infected-area': 'Estimated infected area (%)',
-                'label-total-area': 'Total area (same unit)',
-                'label-tank-size': 'Spray tank size (litres)',
-                'label-area-per-tank': 'Area per tank (ha)',
-                'label-pesticide-strength': 'Formulation strength (%)',
-                
-                // Buttons
-                'button-calculate': 'Calculate',
-                'button-calculate-dose': 'Calculate Dose',
-                'button-reset': 'Reset',
-                'button-explain': 'Why this amount?',
-                'button-search': 'Search',
-                'button-back-home': 'Back to Home',
-                'button-add-video': 'Add Video to Library',
-                
-                // Video Library
-                'tab-featured': 'Featured',
-                'tab-youtube': 'YouTube',
-                'tab-custom': 'My Videos',
-                'upload-video': 'Add Custom Video',
-                'label-video-source': 'Video Source',
-                'label-video-url': 'Video URL or ID',
-                'label-video-title': 'Title',
-                'label-video-desc': 'Description',
-                'label-search-yt': 'Search YouTube for farming videos',
-                'option-direct': 'Direct URL',
-                
-                // Pest Tips
-                'pest-management-tips': 'Pest Management Tips',
-                'tip-early-detection': 'Early Detection',
-                'tip-early-detection-desc': 'Regularly inspect crops for signs of pests. Early detection allows for more effective and less invasive control methods.',
-                'tip-cultural-controls': 'Cultural Controls',
-                'tip-cultural-controls-desc': 'Practice crop rotation, intercropping, and proper sanitation to disrupt pest life cycles and reduce infestations.',
-                'tip-biological-controls': 'Biological Controls',
-                'tip-biological-controls-desc': 'Introduce natural predators like ladybugs for aphids or use biopesticides derived from natural materials.',
-                'tip-chemical-controls': 'Chemical Controls',
-                'tip-chemical-controls-desc': 'Use pesticides as a last resort. Always follow label instructions, wear proper PPE, and observe pre-harvest intervals.',
-                
-                // Unavailable pages
-                'unavailable-health-title': 'Crop Health Diagnostic',
-                'unavailable-health-text': 'The crop health diagnostic feature is currently unavailable. Our AI-powered disease detection system is being enhanced for better accuracy.',
-                'unavailable-community-title': 'Community Feature',
-                'unavailable-community-text': 'The community feature is currently unavailable. Our team is working hard to bring farmers together in a collaborative space.',
-                'unavailable-market-title': 'Marketplace',
-                'unavailable-market-text': 'The marketplace feature is currently under development. Soon you\'ll be able to buy and sell agricultural products directly.',
-                'unavailable-profile-title': 'Profile Section',
-                'unavailable-profile-text': 'The profile management feature is currently unavailable. We\'re building a comprehensive profile system for farmers.'
-            },
-            hi: {
-                'portal-name': 'किसान पोर्टल',
-                'your-crops': 'आपकी फसलें',
-                'heal-crops': 'अपनी फसलों को ठीक करें',
-                'community': 'समुदाय',
-                'market': 'बाजार',
-                'profile': 'आप',
-                'dashboard-title': 'आपकी फसल डैशबोर्ड',
-                'welcome': 'स्वागत है, किसान!',
-                'quick-actions': 'त्वरित कार्य',
-                'fertilizer-calculator': 'उर्वरक कैलकुलेटर',
-                'fertilizer-desc': 'क्षेत्र और मिट्टी की स्थिति के आधार पर अपनी फसलों के लिए उर्वरक की सही मात्रा की गणना करें।',
-                'pest-control': 'कीट नियंत्रण',
-                'pest-desc': 'कीटों की पहचान करें और सुरक्षित और प्रभावी नियंत्रण उपायों की सिफारिशें प्राप्त करें।',
-                'video-library': 'वीडियो लाइब्रेरी',
-                'video-desc': 'शैक्षिक वीडियो, किसान अपलोड और उत्पाद प्रदर्शन तक पहुंचें।',
-                'feature-crop-specific': 'फसल-विशिष्ट सिफारिशें',
-                'feature-soil-analysis': 'मिट्टी पोषक विश्लेषण',
-                'feature-cost-estimation': 'लागत अनुमान',
-                'feature-pesticide-calc': 'कीटनाशक कैलकुलेटर',
-                'feature-expert-tips': 'विशेषज्ञ युक्तियाँ',
-                'feature-safety-guidelines': 'सुरक्षा दिशानिर्देश',
-                'feature-tutorials': 'खेती ट्यूटोरियल',
-                'feature-community-uploads': 'सामुदायिक अपलोड',
-                'feature-product-reviews': 'उत्पाद समीक्षाएँ',
-                'label-crop': 'फसल',
-                'label-area': 'क्षेत्र',
-                'label-unit': 'इकाई',
-                'label-soil-test': 'वैकल्पिक: मिट्टी परीक्षण (N, P, K किग्रा/हेक्टेयर में)',
-                'label-pest-type': 'कीट / रोग प्रकार',
-                'label-infected-area': 'अनुमानित संक्रमित क्षेत्र (%)',
-                'label-total-area': 'कुल क्षेत्र (समान इकाई)',
-                'label-tank-size': 'स्प्रे टैंक आकार (लीटर)',
-                'label-area-per-tank': 'प्रति टैंक क्षेत्र (हेक्टेयर)',
-                'label-pesticide-strength': 'फॉर्मूलेशन सामर्थ्य (%)',
-                'button-calculate': 'गणना करें',
-                'button-calculate-dose': 'खुराक गणना करें',
-                'button-reset': 'रीसेट',
-                'button-explain': 'यह राशि क्यों?',
-                'button-search': 'खोजें',
-                'button-back-home': 'होम पर वापस जाएं',
-                'button-add-video': 'लाइब्रेरी में वीडियो जोड़ें',
-                'tab-featured': 'फीचर्ड',
-                'tab-youtube': 'यूट्यूब',
-                'tab-custom': 'मेरे वीडियो',
-                'upload-video': 'कस्टम वीडियो जोड़ें',
-                'label-video-source': 'वीडियो स्रोत',
-                'label-video-url': 'वीडियो यूआरएल या आईडी',
-                'label-video-title': 'शीर्षक',
-                'label-video-desc': 'विवरण',
-                'label-search-yt': 'कृषि वीडियो के लिए यूट्यूब खोजें',
-                'option-direct': 'सीधा यूआरएल',
-                'pest-management-tips': 'कीट प्रबंधन युक्तियाँ',
-                'tip-early-detection': 'शीघ्र पहचान',
-                'tip-early-detection-desc': 'कीटों के संकेतों के लिए नियमित रूप से फसलों का निरीक्षण करें। शीघ्र पहचान अधिक प्रभावी और कम आक्रामक नियंत्रण विधियों की अनुमति देती है।',
-                'tip-cultural-controls': 'सांस्कृतिक नियंत्रण',
-                'tip-cultural-controls-desc': 'कीट जीवन चक्र को बाधित करने और संक्रमण को कम करने के लिए फसल चक्र, अंतरफसल और उचित स्वच्छता का अभ्यास करें।',
-                'tip-biological-controls': 'जैविक नियंत्रण',
-                'tip-biological-controls-desc': 'एफिड्स के लिए लेडीबग्स जैसे प्राकृतिक शिकारियों को पेश करें या प्राकृतिक सामग्रियों से प्राप्त जैविक कीटनाशकों का उपयोग करें।',
-                'tip-chemical-controls': 'रासायनिक नियंत्रण',
-                'tip-chemical-controls-desc': 'अंतिम उपाय के रूप में कीटनाशकों का उपयोग करें। हमेशा लेबल निर्देशों का पालन करें, उचित पीपीई पहनें और फसल कटाई के अंतराल का पालन करें।',
-                'unavailable-health-title': 'फसल स्वास्थ्य निदान',
-                'unavailable-health-text': 'फसल स्वास्थ्य नैदानिक सुविधा वर्तमान में अनुपलब्ध है। हमारी एआई-संचालित बीमारी पहचान प्रणाली को बेहतर सटीकता के लिए बढ़ाया जा रहा है।',
-                'unavailable-community-title': 'सामुदायिक सुविधा',
-                'unavailable-community-text': 'सामुदायिक सुविधा वर्तमान में अनुपलब्ध है। हमारी टीम किसानों को एक सहयोगी स्थान पर लाने के लिए कड़ी मेहनत कर रही है।',
-                'unavailable-market-title': 'मार्केटप्लेस',
-                'unavailable-market-text': 'मार्केटप्लेस सुविधा वर्तमान में विकास के अधीन है। जल्द ही आप सीधे कृषि उत्पाद खरीद और बेच सकेंगे।',
-                'unavailable-profile-title': 'प्रोफाइल सेक्शन',
-                'unavailable-profile-text': 'प्रोफाइल प्रबंधन सुविधा वर्तमान में अनुपलब्ध है। हम किसानों के लिए एक व्यापक प्रोफाइल सिस्टम बना रहे हैं।'
-            },
-            ta: {
-                'portal-name': 'விவசாயி போர்டல்',
-                'your-crops': 'உங்கள் பயிர்கள்',
-                'heal-crops': 'உங்கள் பயிர்களை குணப்படுத்துங்கள்',
-                'community': 'சமூகம்',
-                'market': 'சந்தை',
-                'profile': 'நீங்கள்',
-                'dashboard-title': 'உங்கள் பயிர் டாஷ்போர்டு',
-                'welcome': 'வரவேற்கிறோம், விவசாயி!',
-                'quick-actions': 'விரைவு செயல்கள்',
-                'fertilizer-calculator': 'உரக் கால்குலேட்டர்',
-                'fertilizer-desc': 'பரப்பளவு மற்றும் மண் நிலைகளின் அடிப்படையில் உங்கள் பயிர்களுக்கு தேவையான உரத்தின் சரியான அளவைக் கணக்கிடுங்கள்.',
-                'pest-control': 'பூச்சி கட்டுப்பாடு',
-                'pest-desc': 'பூச்சிகளை அடையாளம் கண்டு, பாதுகாப்பான மற்றும் பயனுள்ள கட்டுப்பாட்டு நடவடிக்கைகளுக்கான பரிந்துரைகளைப் பெறுங்கள்.',
-                'video-library': 'வீடியோ நூலகம்',
-                'video-desc': 'கல்வி வீடியோக்கள், விவசாயி பதிவேற்றங்கள் மற்றும் தயாரிப்பு நிரூபணங்களை அணுகவும்.',
-                'feature-crop-specific': 'பயிர்-குறிப்பிட்ட பரிந்துரைகள்',
-                'feature-soil-analysis': 'மண் ஊட்டச்சத்து பகுப்பாய்வு',
-                'feature-cost-estimation': 'செலவு மதிப்பீடு',
-                'feature-pesticide-calc': 'பூச்சிக்கொல்லி கால்குலேட்டர்',
-                'feature-expert-tips': 'நிபுணர் உதவிக்குறிப்புகள்',
-                'feature-safety-guidelines': 'பாதுகாப்பு வழிகாட்டுதல்கள்',
-                'feature-tutorials': 'விவசாய பயிற்சிகள்',
-                'feature-community-uploads': 'சமூக பதிவேற்றங்கள்',
-                'feature-product-reviews': 'தயாரிப்பு மதிப்புரைகள்',
-                'label-crop': 'பயிர்',
-                'label-area': 'பரப்பளவு',
-                'label-unit': 'அலகு',
-                'label-soil-test': 'விருப்பத்தேர்வு: மண் சோதனை (N, P, K கிகி/ஹெக்டேரில்)',
-                'label-pest-type': 'பூச்சி / நோய் வகை',
-                'label-infected-area': 'மதிப்பிடப்பட்ட பாதிப்பு பரப்பளவு (%)',
-                'label-total-area': 'மொத்த பரப்பளவு (அதே அலகு)',
-                'label-tank-size': 'தெளிப்பு தொட்டி அளவு (லிட்டர்)',
-                'label-area-per-tank': 'தொட்டிக்கு பரப்பளவு (ஹெக்டேர்)',
-                'label-pesticide-strength': 'தயாரிப்பு வலிமை (%)',
-                'button-calculate': 'கணக்கிடு',
-                'button-calculate-dose': 'டோஸ் கணக்கிடு',
-                'button-reset': 'மீட்டமை',
-                'button-explain': 'இந்த தொகை ஏன்?',
-                'button-search': 'தேடு',
-                'button-back-home': 'முகப்புக்குத் திரும்பு',
-                'button-add-video': 'நூலகத்தில் வீடியோ சேர்க்க',
-                'tab-featured': 'முன்னிலைப்படுத்தப்பட்டவை',
-                'tab-youtube': 'YouTube',
-                'tab-custom': 'எனது வீடியோக்கள்',
-                'upload-video': 'தனிப்பயன் வீடியோ சேர்க்க',
-                'label-video-source': 'வீடியோ மூலம்',
-                'label-video-url': 'வீடியோ URL அல்லது ID',
-                'label-video-title': 'தலைப்பு',
-                'label-video-desc': 'விளக்கம்',
-                'label-search-yt': 'விவசாய வீடியோக்களுக்காக YouTube-ல் தேடுங்கள்',
-                'option-direct': 'நேரடி URL',
-                'pest-management-tips': 'பூச்சி மேலாண்மை உதவிக்குறிப்புகள்',
-                'tip-early-detection': 'ஆரம்பகால கண்டறிதல்',
-                'tip-early-detection-desc': 'பூச்சிகளின் அறிகுறிகளுக்காக பயிர்களை தவறாமல் பரிசோதிக்கவும். ஆரம்பகால கண்டறிதல் மிகவும் பயனுள்ள மற்றும் குறைவான படையெடுப்பு கட்டுப்பாட்டு முறைகளை அனுமதிக்கிறது.',
-                'tip-cultural-controls': 'கலாச்சார கட்டுப்பாடுகள்',
-                'tip-cultural-controls-desc': 'பூச்சி வாழ்க்கை சுழற்சியை சீர்குலைக்க மற்றும் தொற்றுநோய்களைக் குறைக்க பயிர் சுழற்சி, இடைப்பயிர் மற்றும் சரியான சுகாதாரத்தைப் பயிற்சி செய்யுங்கள்.',
-                'tip-biological-controls': 'உயிரியல் கட்டுப்பாடுகள்',
-                'tip-biological-controls-desc': 'அபிட்களுக்கு லேடிபக்ஸ் போன்ற இயற்கை வேட்டையாடுபவர்களை அறிமுகப்படுத்தவும் அல்லது இயற்கை பொருட்களில் இருந்து பெறப்பட்ட உயிர் பூச்சிக்கொல்லிகளைப் பயன்படுத்தவும்.',
-                'tip-chemical-controls': 'இரசாயன கட்டுப்பாடுகள்',
-                'tip-chemical-controls-desc': 'கடைசி முயற்சியாக பூச்சிக்கொல்லிகளைப் பயன்படுத்தவும். எப்போதும் லேபிள் வழிமுறைகளைப் பின்பற்றவும், சரியான PPE அணியவும், அறுவடைக்கு முன்னர் இடைவெளிகளைக் கவனிக்கவும்.',
-                'unavailable-health-title': 'பயிர் சுகாதார நோய் கண்டறிதல்',
-                'unavailable-health-text': 'பயிர் சுகாதார நோய் கண்டறிதல் அம்சம் தற்போது கிடைக்கவில்லை. எங்கள் AI-ஆல் இயக்கப்படும் நோய் கண்டறிதல் அமைப்பு சிறந்த துல்லியத்திற்காக மேம்படுத்தப்படுகிறது.',
-                'unavailable-community-title': 'சமூக அம்சம்',
-                'unavailable-community-text': 'சமூக அம்சம் தற்போது கிடைக்கவில்லை. விவசாயிகளை ஒரு கூட்டுறவு இடத்தில் ஒன்றிணைப்பதற்காக எங்கள் குழு கடினமாக உழைக்கிறது.',
-                'unavailable-market-title': 'சந்தை',
-                'unavailable-market-text': 'சந்தை அம்சம் தற்போது உருவாக்கத்தில் உள்ளது. விரைவில் நீங்கள் விவசாய பொருட்களை நேரடியாக வாங்கவும் விற்கவும் முடியும்.',
-                'unavailable-profile-title': 'சுயவிவர பகுதி',
-                'unavailable-profile-text': 'சுயவிவர மேலாண்மை அம்சம் தற்போது கிடைக்கவில்லை. விவசாயிகளுக்கான ஒரு விரிவான சுயவிவர அமைப்பை நாங்கள் உருவாக்குகிறோம்.'
-            },
-            ml: {
-                'portal-name': 'കർഷക പോർട്ടൽ',
-                'your-crops': 'നിങ്ങളുടെ വിളകൾ',
-                'heal-crops': 'നിങ്ങളുടെ വിളകൾ സുഖപ്പെടുത്തുക',
-                'community': 'കമ്മ്യൂണിറ്റി',
-                'market': 'മാർക്കറ്റ്',
-                'profile': 'നിങ്ങൾ',
-                'dashboard-title': 'നിങ്ങളുടെ വിള ഡാഷ്ബോർഡ്',
-                'welcome': 'സ്വാഗതം, കർഷകാ!',
-                'quick-actions': 'ദ്രുത പ്രവർത്തനങ്ങൾ',
-                'fertilizer-calculator': 'എരുവ് കാൽക്കുലേറ്റർ',
-                'fertilizer-desc': 'വിസ്തീർണ്ണവും മണ്ണിന്റെ അവസ്ഥയും അടിസ്ഥാനമാക്കി നിങ്ങളുടെ വിളകൾക്ക് ആവശ്യമായ എരുവിന്റെ ശരിയായ അളവ് കണക്കാക്കുക.',
-                'pest-control': 'കീട നിയന്ത്രണം',
-                'pest-desc': 'കീടങ്ങളെ തിരിച്ചറിയുക, സുരക്ഷിതവും ഫലപ്രദവുമായ നിയന്ത്രണ നടപടികളുടെ ശുപാർശകൾ നേടുക.',
-                'video-library': 'വീഡിയോ ലൈബ്രറി',
-                'video-desc': 'വിദ്യാഭ്യാസ വീഡിയോകൾ, കർഷക അപ്ലോഡുകൾ, ഉൽപ്പന്ന പ്രദർശനങ്ങൾ എന്നിവ ആക്സസ് ചെയ്യുക.',
-                'feature-crop-specific': 'വിള-നിർദ്ദിഷ്ട ശുപാർശകൾ',
-                'feature-soil-analysis': 'മണ്ണ് പോഷക വിശകലനം',
-                'feature-cost-estimation': 'ചെലവ് കണക്കാക്കൽ',
-                'feature-pesticide-calc': 'പെസ്റ്റിസൈഡ് കാൽക്കുലേറ്റർ',
-                'feature-expert-tips': 'വിദഗ്ദ്ധോപദേശങ്ങൾ',
-                'feature-safety-guidelines': 'സുരക്ഷാ മാർഗ്ഗനിർദ്ദേശങ്ങൾ',
-                'feature-tutorials': 'കൃഷി ട്യൂട്ടോറിയലുകൾ',
-                'feature-community-uploads': 'കമ്മ്യൂണിറ്റി അപ്ലോഡുകൾ',
-                'feature-product-reviews': 'ഉൽപ്പന്ന അവലോകനങ്ങൾ',
-                'label-crop': 'വിള',
-                'label-area': 'വിസ്തീർണ്ണം',
-                'label-unit': 'യൂണിറ്റ്',
-                'label-soil-test': 'ഓപ്ഷണൽ: മണ്ണ് പരിശോധന (N, P, K kg/ha-ൽ)',
-                'label-pest-type': 'കീടം / രോഗം തരം',
-                'label-infected-area': 'കണക്കാക്കിയ ബാധിത പ്രദേശം (%)',
-                'label-total-area': 'ആകെ വിസ്തീർണ്ണം (അതേ യൂണിറ്റ്)',
-                'label-tank-size': 'സ്പ്രേ ടാങ്ക് വലുപ്പം (ലിറ്റർ)',
-                'label-area-per-tank': 'ഓരോ ടാങ്കിനും വിസ്തീർണ്ണം (ഹെക്ടർ)',
-                'label-pesticide-strength': 'ഫോർമുലേഷൻ ശക്തി (%)',
-                'button-calculate': 'കണക്കുകൂട്ടുക',
-                'button-calculate-dose': 'ഡോസ് കണക്കുകൂട്ടുക',
-                'button-reset': 'റീസെറ്റ്',
-                'button-explain': 'ഈ തുക എന്തുകൊണ്ട്?',
-                'button-search': 'തിരയുക',
-                'button-back-home': 'ഹോമിലേക്ക് മടങ്ങുക',
-                'button-add-video': 'ലൈബ്രറിയിൽ വീഡിയോ ചേർക്കുക',
-                'tab-featured': 'ഫീച്ചർ ചെയ്തത്',
-                'tab-youtube': 'YouTube',
-                'tab-custom': 'എന്റെ വീഡിയോകൾ',
-                'upload-video': 'കസ്റ്റം വീഡിയോ ചേർക്കുക',
-                'label-video-source': 'വീഡിയോ സ്രോതസ്സ്',
-                'label-video-url': 'വീഡിയോ URL അല്ലെങ്കിൽ ID',
-                'label-video-title': 'തലക്കെട്ട്',
-                'label-video-desc': 'വിവരണം',
-                'label-search-yt': 'കൃഷി വീഡിയോകൾക്കായി YouTube-ൽ തിരയുക',
-                'option-direct': 'നേരിട്ടുള്ള URL',
-                'pest-management-tips': 'കീട മാനേജ്മെന്റ് ടിപ്പുകൾ',
-                'tip-early-detection': 'ആദ്യകാല കണ്ടെത്തൽ',
-                'tip-early-detection-desc': 'കീടങ്ങളുടെ അടയാളങ്ങൾക്കായി വിളകൾ നിയമിതമായി പരിശോധിക്കുക. ആദ്യകാല കണ്ടെത്തൽ കൂടുതൽ ഫലപ്രദവും കുറഞ്ഞ ഇടപെടലും ഉള്ള നിയന്ത്രണ രീതികളെ അനുവദിക്കുന്നു.',
-                'tip-cultural-controls': 'സാംസ്കാരിക നിയന്ത്രണങ്ങൾ',
-                'tip-cultural-controls-desc': 'കീട ജീവിതചക്രത്തെ തടസ്സപ്പെടുത്താനും ബാധകൾ കുറയ്ക്കാനും വിള കറക്കം, ഇന്റർക്രോപ്പിംഗ്, ശരിയായ ശുചിത്വം എന്നിവ പ്രയോഗിക്കുക.',
-                'tip-biological-controls': 'ജൈവിക നിയന്ത്രണങ്ങൾ',
-                'tip-biological-controls-desc': 'ആഫിഡുകൾക്ക് ലേഡിബഗ്സ് പോലുള്ള സ്വാഭാവിക ഇരപിടിയന്മാരെ പരിചയപ്പെടുത്തുക അല്ലെങ്കിൽ സ്വാഭാവിക വസ്തുക്കളിൽ നിന്ന് ലഭിക്കുന്ന ബയോപെസ്റ്റിസൈഡുകൾ ഉപയോഗിക്കുക.',
-                'tip-chemical-controls': 'രാസ നിയന്ത്രണങ്ങൾ',
-                'tip-chemical-controls-desc': 'അവസാന ഉപാധിയായി പെസ്റ്റിസൈഡുകൾ ഉപയോഗിക്കുക. എല്ലായ്പ്പോഴും ലേബൽ നിർദ്ദേശങ്ങൾ പാലിക്കുക, ഉചിതമായ PPE ധരിക്കുക, വിളവെടുപ്പിന് മുമ്പുള്ള ഇടവേളകൾ നിരീക്ഷിക്കുക.',
-                'unavailable-health-title': 'വിള ആരോഗ്യ ഡയഗ്നോസ്റ്റിക്',
-                'unavailable-health-text': 'വിള ആരോഗ്യ ഡയഗ്നോസ്റ്റിക് സവിശേഷത നിലവിൽ ലഭ്യമല്ല. ഞങ്ങളുടെ AI-പവർ ചെയ്ത രോഗം കണ്ടെത്തൽ സംവിധാനം മികച്ച കൃത്യതയ്ക്കായി വർദ്ധിപ്പിക്കുന്നു.',
-                'unavailable-community-title': 'കമ്മ്യൂണിറ്റി സവിശേഷത',
-                'unavailable-community-text': 'കമ്മ്യൂണിറ്റി സവിശേഷത നിലവിൽ ലഭ്യമല്ല. കർഷകരെ ഒരു സഹകരണ സ്ഥലത്ത് ഒന്നിച്ചുകൂട്ടുന്നതിന് ഞങ്ങളുടെ ടീം കഠിനമായി പ്രവർത്തിക്കുന്നു.',
-                'unavailable-market-title': 'മാർക്കറ്റ്പ്ലേസ്',
-                'unavailable-market-text': 'മാർക്കറ്റ്പ്ലേസ് സവിശേഷത നിലവിൽ വികസനത്തിലാണ്. ഉടൻ തന്നെ നിങ്ങൾക്ക് കാർഷിക ഉൽപ്പന്നങ്ങൾ നേരിട്ട് വാങ്ങാനും വിൽക്കാനും കഴിയും.',
-                'unavailable-profile-title': 'പ്രൊഫൈൽ വിഭാഗം',
-                'unavailable-profile-text': 'പ്രൊഫൈൽ മാനേജ്മെന്റ് സവിശേഷത നിലവിൽ ലഭ്യമല്ല. കർഷകർക്കായി ഒരു സമഗ്ര പ്രൊഫൈൽ സിസ്റ്റം ഞങ്ങൾ നിർമ്മിക്കുന്നു.'
-            }
-        };
-
-        // ==================== LANGUAGE MANAGEMENT ====================
-        function applyLanguage(lang) {
-            localStorage.setItem('preferredLanguage', lang);
-            document.documentElement.lang = lang;
-            
-            // Update all translatable elements
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-            
-            // Update select element
-            document.getElementById('languageSelect').value = lang;
-        }
-
-        // ==================== ENHANCED LOCATION DETECTION ====================
-        async function getEnhancedLocation() {
-            try {
-                // Try high-accuracy GPS first
-                const position = await new Promise((resolve, reject) => {
-                    navigator.geolocation.getCurrentPosition(resolve, reject, {
-                        enableHighAccuracy: true,
-                        timeout: 15000,
-                        maximumAge: 60000
-                    });
-                });
-
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-                const accuracy = position.coords.accuracy;
-
-                // Update accuracy indicator
-                updateAccuracyIndicator(accuracy);
-
-                // Try multiple geocoding services
-                const location = await getAccurateLocationName(lat, lon);
-                return location;
-
-            } catch (error) {
-                console.log('GPS failed, trying IP-based location...');
-                return await getIPBasedLocation();
-            }
-        }
-
-        async function getAccurateLocationName(lat, lon) {
-            const services = [
-                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
-                `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`
-            ];
-
-            for (const service of services) {
-                try {
-                    const response = await fetch(service);
-                    const data = await response.json();
-                    
-                    if (service.includes('nominatim')) {
-                        if (data.address) {
-                            return formatNominatimLocation(data.address);
-                        }
-                    } else {
-                        if (data.locality) {
-                            return {
-                                name: data.locality,
-                                city: data.city,
-                                region: data.principalSubdivision,
-                                country: data.countryName
-                            };
-                        }
-                    }
-                } catch (error) {
-                    console.log(`Service failed: ${service}`);
-                }
-            }
-            throw new Error('All geocoding services failed');
-        }
-
-        function formatNominatimLocation(address) {
-            let locationName = '';
-            
-            // Priority-based location naming
-            if (address.village) locationName = address.village;
-            else if (address.town) locationName = address.town;
-            else if (address.city) locationName = address.city;
-            else if (address.municipality) locationName = address.municipality;
-            else if (address.county) locationName = address.county;
-            
-            if (address.state && locationName !== address.state) {
-                locationName += `, ${address.state}`;
-            }
-            
-            return {
-                name: locationName,
-                city: address.city || address.town || address.village,
-                region: address.state,
-                country: address.country
-            };
-        }
-
-        // Fallback to IP-based location
-        async function getIPBasedLocation() {
-            try {
-                const response = await fetch('https://ipapi.co/json/');
-                const data = await response.json();
-                
-                const location = {
-                    name: `${data.city}, ${data.region}`,
-                    city: data.city,
-                    region: data.region,
-                    country: data.country_name
-                };
-                
-                return location;
-            } catch (error) {
-                return setDefaultLocation();
-            }
-        }
-
-        function updateAccuracyIndicator(accuracy) {
-            const accuracyElement = document.getElementById('locationAccuracy');
-            if (accuracy < 100) {
-                accuracyElement.innerHTML = `<span class="accuracy-high">High accuracy</span>`;
-            } else if (accuracy < 1000) {
-                accuracyElement.innerHTML = `<span class="accuracy-medium">Medium accuracy</span>`;
-            } else {
-                accuracyElement.innerHTML = `<span class="accuracy-low">Low accuracy</span>`;
-            }
-        }
-
-        function updateLocationUI(location) {
-            document.getElementById('userLocation').textContent = location.name;
-            document.getElementById('currentLocation').textContent = location.name;
-            
-            // Store for later use
-            window.currentLocation = location;
-        }
-
-        function setDefaultLocation() {
-            const defaultLocation = {
-                name: 'Chennai, Tamil Nadu',
-                city: 'Chennai',
-                region: 'Tamil Nadu',
-                country: 'India'
-            };
-            
-            updateLocationUI(defaultLocation);
-            document.getElementById('locationAccuracy').innerHTML = `<span class="accuracy-low">Default location</span>`;
-            return defaultLocation;
-        }
-
         // ==================== VIDEO LIBRARY ENHANCEMENTS ====================
         class VideoLibraryManager {
             constructor() {
@@ -1912,12 +1438,142 @@
             }, delay);
         }
 
+        // ==================== ENHANCED LOCATION DETECTION ====================
+        async function getEnhancedLocation() {
+            try {
+                // Try high-accuracy GPS first
+                const position = await new Promise((resolve, reject) => {
+                    navigator.geolocation.getCurrentPosition(resolve, reject, {
+                        enableHighAccuracy: true,
+                        timeout: 15000,
+                        maximumAge: 60000
+                    });
+                });
+
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const accuracy = position.coords.accuracy;
+
+                // Update accuracy indicator
+                updateAccuracyIndicator(accuracy);
+
+                // Try multiple geocoding services
+                const location = await getAccurateLocationName(lat, lon);
+                return location;
+
+            } catch (error) {
+                console.log('GPS failed, trying IP-based location...');
+                return await getIPBasedLocation();
+            }
+        }
+
+        async function getAccurateLocationName(lat, lon) {
+            const services = [
+                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
+                `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`
+            ];
+
+            for (const service of services) {
+                try {
+                    const response = await fetch(service);
+                    const data = await response.json();
+                    
+                    if (service.includes('nominatim')) {
+                        if (data.address) {
+                            return formatNominatimLocation(data.address);
+                        }
+                    } else {
+                        if (data.locality) {
+                            return {
+                                name: data.locality,
+                                city: data.city,
+                                region: data.principalSubdivision,
+                                country: data.countryName
+                            };
+                        }
+                    }
+                } catch (error) {
+                    console.log(`Service failed: ${service}`);
+                }
+            }
+            throw new Error('All geocoding services failed');
+        }
+
+        function formatNominatimLocation(address) {
+            let locationName = '';
+            
+            // Priority-based location naming
+            if (address.village) locationName = address.village;
+            else if (address.town) locationName = address.town;
+            else if (address.city) locationName = address.city;
+            else if (address.municipality) locationName = address.municipality;
+            else if (address.county) locationName = address.county;
+            
+            if (address.state && locationName !== address.state) {
+                locationName += `, ${address.state}`;
+            }
+            
+            return {
+                name: locationName,
+                city: address.city || address.town || address.village,
+                region: address.state,
+                country: address.country
+            };
+        }
+
+        // Fallback to IP-based location
+        async function getIPBasedLocation() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                
+                const location = {
+                    name: `${data.city}, ${data.region}`,
+                    city: data.city,
+                    region: data.region,
+                    country: data.country_name
+                };
+                
+                return location;
+            } catch (error) {
+                return setDefaultLocation();
+            }
+        }
+
+        function updateAccuracyIndicator(accuracy) {
+            const accuracyElement = document.getElementById('locationAccuracy');
+            if (accuracy < 100) {
+                accuracyElement.innerHTML = `<span class="accuracy-high">High accuracy</span>`;
+            } else if (accuracy < 1000) {
+                accuracyElement.innerHTML = `<span class="accuracy-medium">Medium accuracy</span>`;
+            } else {
+                accuracyElement.innerHTML = `<span class="accuracy-low">Low accuracy</span>`;
+            }
+        }
+
+        function updateLocationUI(location) {
+            document.getElementById('userLocation').textContent = location.name;
+            document.getElementById('currentLocation').textContent = location.name;
+            
+            // Store for later use
+            window.currentLocation = location;
+        }
+
+        function setDefaultLocation() {
+            const defaultLocation = {
+                name: 'Chennai, Tamil Nadu',
+                city: 'Chennai',
+                region: 'Tamil Nadu',
+                country: 'India'
+            };
+            
+            updateLocationUI(defaultLocation);
+            document.getElementById('locationAccuracy').innerHTML = `<span class="accuracy-low">Default location</span>`;
+            return defaultLocation;
+        }
+
         // ==================== INITIALIZATION ====================
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize language system
-            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            applyLanguage(savedLang);
-
             // Initialize video library manager
             window.videoLibraryManager = new VideoLibraryManager();
 
@@ -1933,10 +1589,6 @@
             updateWeather();
 
             // Event listeners
-            document.getElementById('languageSelect').addEventListener('change', (e) => {
-                applyLanguage(e.target.value);
-            });
-
             document.getElementById('addCustomVideo').addEventListener('click', () => {
                 window.videoLibraryManager.addCustomVideo();
             });
@@ -2139,6 +1791,19 @@
     <!-- Chatbase Chatbot Script -->
     <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="7pFdedNB2Kz1zUtlvlJte";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+    
+    <!-- Google Translate Element -->
+    <div id="google_translate_element" style="position: fixed; top: 15px; right: 15px; background: #4CAF50; border-radius: 40px; padding: 4px 12px; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,ta,te,ml,bn,kn,mr,gu,pa'
+        }, 'google_translate_element');
+    }
     </script>
 </body>
 </html>
