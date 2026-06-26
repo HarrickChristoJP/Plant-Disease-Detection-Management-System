@@ -13,70 +13,41 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #00C853;
-            --primary-dark: #00A844;
-            --primary-light: #5EFC82;
-            --secondary: #FFD600;
-            --secondary-dark: #E6C200;
-            --accent: #2962FF;
-            --accent-light: #768FFF;
-            --dark: #1A1A1A;
-            --dark-light: #2D2D2D;
-            --light: #FFFFFF;
-            --gray: #F5F5F5;
-            --gray-dark: #E0E0E0;
-            --text: #212121;
-            --text-light: #757575;
-            --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent-light));
-            --gradient-dark: linear-gradient(135deg, var(--dark), var(--dark-light));
-            --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
-            --radius: 16px;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom right, #f8fff9, #e3f2fd);
-            color: var(--text);
+            background: linear-gradient(to bottom, #F5F5F5, #E8F5E9);
+            color: #2E2E2E;
             min-height: 100vh;
             line-height: 1.6;
             display: flex;
-            overflow-x: hidden;
         }
 
         /* Sidebar Navigation */
         .sidebar {
-            width: 280px;
-            background: var(--gradient-dark);
-            color: var(--light);
+            width: 250px;
+            background-color: #4CAF50;
+            color: white;
             height: 100vh;
             position: fixed;
             left: 0;
             top: 0;
             padding: 20px 0;
-            box-shadow: var(--shadow);
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
             z-index: 1000;
             overflow-y: auto;
-            transition: var(--transition);
         }
 
         .logo {
             text-align: center;
             padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             margin-bottom: 20px;
         }
 
         .logo h1 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            font-size: 1.6rem;
-            background: linear-gradient(to right, var(--primary-light), var(--light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
+            font-size: 1.5rem;
         }
 
         .nav-menu {
@@ -84,73 +55,46 @@
         }
 
         .nav-item {
-            padding: 18px 25px;
+            padding: 15px 25px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 15px;
-            border-left: 4px solid transparent;
-            margin: 5px 15px;
-            border-radius: 0 12px 12px 0;
         }
 
-        .nav-item:hover {
-            background: rgba(255,255,255,0.1);
-            border-left: 4px solid var(--primary-light);
-            transform: translateX(5px);
-        }
-
-        .nav-item.active {
-            background: rgba(255,255,255,0.15);
-            border-left: 4px solid var(--primary);
-            transform: translateX(5px);
+        .nav-item:hover, .nav-item.active {
+            background-color: rgba(255,255,255,0.1);
         }
 
         .nav-item i {
             font-size: 1.2rem;
             width: 25px;
-            color: var(--primary-light);
         }
 
         /* Main Content */
         .main-content {
-            margin-left: 280px;
+            margin-left: 250px;
             padding: 30px;
-            width: calc(100% - 280px);
-            transition: var(--transition);
+            width: calc(100% - 250px);
         }
 
         .page-header {
-            background: var(--light);
+            background-color: #FFFFFF;
             padding: 25px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             margin-bottom: 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 100%;
-            background: var(--gradient-primary);
         }
 
         .page-title {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 2rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #4CAF50;
         }
 
         .user-info {
@@ -163,64 +107,43 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: var(--gradient-primary);
+            background-color: #8BC34A;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.5rem;
-            box-shadow: var(--shadow);
         }
 
         /* Weather Card */
         .weather-card {
-            background: var(--light);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 25px;
             margin-bottom: 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .weather-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .weather-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-primary);
         }
 
         .weather-location {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            color: var(--text);
+            color: #2E2E2E;
             margin-bottom: 5px;
         }
 
         .weather-date {
-            color: var(--text-light);
+            color: #666;
             font-size: 0.9rem;
             margin-bottom: 10px;
         }
 
         .weather-temp {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #4CAF50;
         }
 
         .weather-details {
@@ -228,56 +151,46 @@
         }
 
         .weather-condition {
-            font-size: 1.2rem;
-            color: var(--text);
+            font-size: 1.1rem;
+            color: #2E2E2E;
             margin-bottom: 5px;
-            font-weight: 500;
         }
 
         .weather-range {
-            color: var(--text-light);
+            color: #666;
             font-size: 0.9rem;
         }
+
+        .location-accuracy {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .accuracy-high { color: #4CAF50; }
+        .accuracy-medium { color: #FF9800; }
+        .accuracy-low { color: #f44336; }
 
         /* Feature Cards */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-bottom: 30px;
         }
 
         .feature-card {
-            background: var(--light);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 25px;
-            transition: var(--transition);
+            transition: transform 0.3s ease;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: var(--transition);
-            transform-origin: left;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .feature-header {
@@ -288,27 +201,26 @@
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background: var(--gradient-primary);
+            background-color: #E8F5E9;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #4CAF50;
             font-size: 1.5rem;
-            box-shadow: var(--shadow);
         }
 
         .feature-title {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            font-size: 1.4rem;
-            color: var(--text);
+            font-size: 1.3rem;
+            color: #2E2E2E;
         }
 
         .feature-desc {
-            color: var(--text-light);
+            color: #666;
             margin-bottom: 15px;
         }
 
@@ -325,7 +237,7 @@
         }
 
         .feature-list i {
-            color: var(--primary);
+            color: #4CAF50;
         }
 
         /* Form Elements */
@@ -337,87 +249,76 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
-            color: var(--text);
+            color: #2E2E2E;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 14px 15px;
-            border: 1px solid var(--gray-dark);
-            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             font-size: 1rem;
-            transition: var(--transition);
+            transition: border 0.3s;
             font-family: 'Roboto', sans-serif;
-            background: var(--light);
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.2);
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
         }
 
         .btn {
-            padding: 14px 25px;
+            padding: 12px 25px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             font-size: 1rem;
             cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
         }
 
         .btn-primary {
-            background: var(--gradient-primary);
+            background-color: #4CAF50;
             color: white;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
+            background-color: #3d8b40;
         }
 
         .btn-secondary {
-            background: var(--secondary);
-            color: var(--dark);
+            background-color: #FFD700;
+            color: #2E2E2E;
         }
 
         .btn-secondary:hover {
-            background: var(--secondary-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
+            background-color: #e6c200;
         }
 
         .btn-group {
             display: flex;
             gap: 10px;
             margin-top: 15px;
-            flex-wrap: wrap;
         }
 
         /* Tabs */
         .tabs {
             display: flex;
-            border-bottom: 1px solid var(--gray-dark);
+            border-bottom: 1px solid #ddd;
             margin-bottom: 20px;
         }
 
         .tab {
-            padding: 12px 20px;
+            padding: 10px 20px;
             cursor: pointer;
             border-bottom: 3px solid transparent;
-            transition: var(--transition);
-            font-weight: 500;
         }
 
         .tab.active {
-            border-bottom: 3px solid var(--primary);
-            color: var(--primary);
+            border-bottom: 3px solid #4CAF50;
+            color: #4CAF50;
             font-weight: 600;
         }
 
@@ -429,57 +330,73 @@
             display: block;
         }
 
+        /* Video Upload Section */
+        .video-upload-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border: 2px dashed #4CAF50;
+        }
+
+        .custom-badge {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: #4CAF50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
         /* Unavailable Page */
         .unavailable-page {
             display: none;
             text-align: center;
-            padding: 80px 20px;
+            padding: 50px 20px;
         }
 
         .unavailable-icon {
-            font-size: 6rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 5rem;
+            color: #8BC34A;
             margin-bottom: 20px;
         }
 
         .unavailable-title {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 2.5rem;
+            font-weight: 600;
+            font-size: 2rem;
             margin-bottom: 15px;
-            color: var(--text);
+            color: #2E2E2E;
         }
 
         .unavailable-text {
-            color: var(--text-light);
+            color: #666;
             margin-bottom: 30px;
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
-            font-size: 1.1rem;
         }
 
         /* Results Section */
         .results {
-            background: var(--gray);
-            border-radius: 10px;
+            background-color: #F5F5F5;
+            border-radius: 8px;
             padding: 20px;
             margin-top: 20px;
             display: none;
-            border-left: 4px solid var(--primary);
         }
 
         .results.active {
             display: block;
-            animation: fadeIn 0.5s ease;
         }
 
         .result-item {
             margin-bottom: 15px;
             padding-bottom: 15px;
-            border-bottom: 1px solid var(--gray-dark);
+            border-bottom: 1px solid #ddd;
         }
 
         .result-item:last-child {
@@ -489,40 +406,38 @@
 
         .result-title {
             font-weight: 600;
-            color: var(--primary);
+            color: #4CAF50;
             margin-bottom: 5px;
         }
 
         /* Video Grid */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
 
         .video-card {
-            background: var(--light);
-            border-radius: 12px;
+            background-color: #F5F5F5;
+            border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
 
         .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
         }
 
         .video-thumbnail {
             width: 100%;
-            height: 140px;
-            background: var(--gray);
+            height: 120px;
+            background-color: #ddd;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-light);
+            color: #666;
             position: relative;
             overflow: hidden;
         }
@@ -531,11 +446,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .video-card:hover .video-thumbnail img {
-            transform: scale(1.05);
         }
 
         .video-info {
@@ -545,15 +455,14 @@
         .video-title {
             font-weight: 600;
             margin-bottom: 5px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             height: 40px;
             overflow: hidden;
-            line-height: 1.3;
         }
 
         .video-meta {
             font-size: 0.8rem;
-            color: var(--text-light);
+            color: #666;
         }
 
         /* Modal */
@@ -564,23 +473,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.7);
+            background-color: rgba(0,0,0,0.5);
             z-index: 2000;
             align-items: center;
             justify-content: center;
-            animation: fadeIn 0.3s ease;
         }
 
         .modal-content {
-            background-color: var(--light);
+            background-color: #FFFFFF;
             padding: 30px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-hover);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             max-width: 800px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
-            position: relative;
         }
 
         .modal-header {
@@ -594,21 +501,15 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             font-size: 1.5rem;
-            color: var(--text);
+            color: #2E2E2E;
         }
 
         .close-modal {
             background: none;
             border: none;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            color: var(--primary);
-            transform: rotate(90deg);
+            color: #666;
         }
 
         /* Tips Section */
@@ -617,27 +518,21 @@
             max-height: 300px;
             overflow-y: auto;
             padding: 15px;
-            background: var(--gray);
-            border-radius: 10px;
-            border-left: 4px solid var(--accent);
+            background-color: #F5F5F5;
+            border-radius: 8px;
         }
 
         .tip-item {
-            padding: 12px;
+            padding: 10px;
             margin-bottom: 10px;
-            background: var(--light);
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-            transition: var(--transition);
-        }
-
-        .tip-item:hover {
-            transform: translateX(5px);
+            background-color: white;
+            border-radius: 6px;
+            border-left: 4px solid #4CAF50;
         }
 
         .tip-title {
             font-weight: 600;
-            color: var(--primary);
+            color: #4CAF50;
             margin-bottom: 5px;
         }
 
@@ -655,106 +550,16 @@
         .calculator-section {
             display: none;
             margin-top: 30px;
-            animation: fadeIn 0.5s ease;
         }
 
         .calculator-section.active {
             display: block;
         }
 
-        /* Footer */
-        .footer {
-            background: var(--gradient-dark);
-            color: var(--light);
-            padding: 25px;
-            margin-top: 50px;
-            border-radius: var(--radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, var(--primary-light), var(--light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .footer p {
-            margin-bottom: 10px;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .team-members {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .member {
-            background: rgba(255,255,255,0.1);
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-        }
-
-        .hackathon-info {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* Chat Widget Toggle */
-        .chat-widget-toggle {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-hover);
-            transition: var(--transition);
-            z-index: 100;
-        }
-
-        .chat-widget-toggle:hover {
-            transform: scale(1.1) rotate(10deg);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
         /* Responsive Design */
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .sidebar {
-                width: 80px;
+                width: 70px;
             }
             
             .sidebar .logo h1, .nav-item span {
@@ -764,13 +569,12 @@
             .nav-item {
                 justify-content: center;
                 padding: 15px 0;
-                margin: 5px 10px;
             }
             
             .main-content {
-                margin-left: 80px;
-                width: calc(100% - 80px);
-                padding: 20px;
+                margin-left: 70px;
+                width: calc(100% - 70px);
+                padding: 15px;
             }
             
             .features {
@@ -796,17 +600,11 @@
             .row {
                 flex-direction: column;
             }
-            
-            .chat-widget-toggle {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .main-content {
-                padding: 15px;
+                padding: 10px;
             }
             
             .feature-card, .weather-card {
@@ -816,47 +614,6 @@
             .video-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .btn-group {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-content {
-                padding: 10px;
-            }
-            
-            .page-title {
-                font-size: 1.6rem;
-            }
-            
-            .weather-temp {
-                font-size: 2.5rem;
-            }
-            
-            .feature-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-            
-            .feature-title {
-                font-size: 1.2rem;
-            }
-            
-            .chat-widget-toggle {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-                bottom: 20px;
-                right: 20px;
-            }
         }
     </style>
 </head>
@@ -864,7 +621,7 @@
     <!-- Sidebar Navigation -->
     <div class="sidebar">
         <div class="logo">
-            <h1><i class="fas fa-seedling"></i> Farmer Portal</h1>
+            <h1><i class="fas fa-seedling"></i> <span>Farmer Portal</span></h1>
         </div>
         <ul class="nav-menu">
             <li class="nav-item active" data-page="home">
@@ -902,7 +659,10 @@
                     </div>
                     <div>
                         <div class="user-name">Welcome, Farmer!</div>
-                        <div class="user-status" id="userLocation">Detecting your location...</div>
+                        <div class="user-status">
+                            <span id="userLocation">Detecting your location...</span>
+                            <div class="location-accuracy" id="locationAccuracy"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -920,7 +680,7 @@
                 </div>
             </div>
 
-            <h2 style="margin: 30px 0 20px; font-family: 'Poppins', sans-serif; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Quick Actions</h2>
+            <h2 style="margin: 30px 0 20px; font-family: 'Poppins', sans-serif; color: #4CAF50;">Quick Actions</h2>
             
             <div class="features">
                 <!-- Fertilizer Calculator Card -->
@@ -933,9 +693,9 @@
                     </div>
                     <p class="feature-desc">Calculate the right amount of fertilizer for your crops based on area and soil conditions.</p>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Crop-specific recommendations</li>
-                        <li><i class="fas fa-check"></i> Soil nutrient analysis</li>
-                        <li><i class="fas fa-check"></i> Cost estimation</li>
+                        <li><i class="fas fa-check"></i> <span>Crop-specific recommendations</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soil nutrient analysis</span></li>
+                        <li><i class="fas fa-check"></i> <span>Cost estimation</span></li>
                     </ul>
                 </div>
 
@@ -949,9 +709,9 @@
                     </div>
                     <p class="feature-desc">Identify pests and get recommendations for safe and effective control measures.</p>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Pesticide calculator</li>
-                        <li><i class="fas fa-check"></i> Expert tips</li>
-                        <li><i class="fas fa-check"></i> Safety guidelines</li>
+                        <li><i class="fas fa-check"></i> <span>Pesticide calculator</span></li>
+                        <li><i class="fas fa-check"></i> <span>Expert tips</span></li>
+                        <li><i class="fas fa-check"></i> <span>Safety guidelines</span></li>
                     </ul>
                 </div>
 
@@ -965,9 +725,9 @@
                     </div>
                     <p class="feature-desc">Access educational videos, farmer uploads, and product demonstrations.</p>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Farming tutorials</li>
-                        <li><i class="fas fa-check"></i> Community uploads</li>
-                        <li><i class="fas fa-check"></i> Product reviews</li>
+                        <li><i class="fas fa-check"></i> <span>Farming tutorials</span></li>
+                        <li><i class="fas fa-check"></i> <span>Community uploads</span></li>
+                        <li><i class="fas fa-check"></i> <span>Product reviews</span></li>
                     </ul>
                 </div>
             </div>
@@ -978,7 +738,7 @@
                     <h2 class="feature-title" style="margin-bottom: 20px;">Fertilizer Calculator</h2>
                     
                     <div class="form-group">
-                        <label for="fert-crop">Crop</label>
+                        <label>Crop</label>
                         <select id="fert-crop">
                             <option value="rice">Rice</option>
                             <option value="wheat">Wheat</option>
@@ -991,11 +751,11 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="fert-area">Area</label>
+                            <label>Area</label>
                             <input id="fert-area" type="number" min="0" step="0.01" placeholder="e.g., 1" />
                         </div>
                         <div style="width: 135px">
-                            <label for="fert-unit">Unit</label>
+                            <label>Unit</label>
                             <select id="fert-unit">
                                 <option value="ha">Hectares</option>
                                 <option value="acre">Acres</option>
@@ -1012,17 +772,15 @@
                     </div>
 
                     <div class="btn-group">
-                        <button id="fert-calc" class="btn btn-primary"><i class="fas fa-calculator"></i> Calculate</button>
-                        <button id="fert-save" class="btn btn-secondary"><i class="fas fa-save"></i> Save Result</button>
-                        <button id="fert-reset" class="btn btn-secondary"><i class="fas fa-redo"></i> Reset</button>
-                        <button id="fert-explain-toggle" class="btn btn-secondary"><i class="fas fa-question-circle"></i> Why this amount?</button>
+                        <button id="fert-calc" class="btn btn-primary">Calculate</button>
+                        <button id="fert-reset" class="btn btn-secondary">Reset</button>
+                        <button id="fert-explain-toggle" class="btn btn-secondary">Why this amount?</button>
                     </div>
 
                     <div id="fert-result" class="results">
                         <div class="result-item" id="fert-summary"></div>
                         <div id="fert-breakdown" style="margin-top: 8px"></div>
                         <div id="fert-schedule" style="margin-top: 10px"></div>
-                        <div style="margin-top: 10px; color: var(--primary); font-weight: 600;" id="fert-saved-note" style="display: none">Saved to browser localStorage.</div>
                     </div>
 
                     <div id="fert-explain" style="display: none; margin-top: 15px; padding: 10px; background-color: #E8F5E9; border-radius: 5px;"></div>
@@ -1035,7 +793,7 @@
                     <h2 class="feature-title" style="margin-bottom: 20px;">Pest Calculator & Tips</h2>
                     
                     <div class="form-group">
-                        <label for="pest-crop">Crop</label>
+                        <label>Crop</label>
                         <select id="pest-crop">
                             <option value="rice">Rice</option>
                             <option value="wheat">Wheat</option>
@@ -1046,7 +804,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="pest-type">Pest / Disease Type</label>
+                        <label>Pest / Disease Type</label>
                         <select id="pest-type">
                             <option value="stem_borer">Stem Borer</option>
                             <option value="aphids">Aphids</option>
@@ -1058,11 +816,11 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="infected-percent">Estimated infected area (%)</label>
+                            <label>Estimated infected area (%)</label>
                             <input id="infected-percent" type="number" min="0" max="100" step="1" placeholder="e.g., 10" />
                         </div>
                         <div style="width: 160px">
-                            <label for="area-pest">Area unit</label>
+                            <label>Area unit</label>
                             <select id="area-pest">
                                 <option value="ha">Hectares</option>
                                 <option value="acre">Acres</option>
@@ -1073,30 +831,30 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="total-area">Total area (same unit)</label>
+                            <label>Total area (same unit)</label>
                             <input id="total-area" type="number" min="0" step="0.01" placeholder="e.g., 1.5" />
                         </div>
                         <div style="width: 160px">
-                            <label for="tank-size">Spray tank size (litres)</label>
+                            <label>Spray tank size (litres)</label>
                             <input id="tank-size" type="number" min="1" step="1" value="200" />
                         </div>
                     </div>
 
-                    <div style="margin-top: 8px; color: var(--text-light); font-size: 0.9rem;">Area that one full tank covers (ha). Change if you know exact coverage per tank.</div>
+                    <div style="margin-top: 8px; color: #666; font-size: 0.9rem;">Area that one full tank covers (ha). Change if you know exact coverage per tank.</div>
                     <div class="row" style="margin-top: 6px">
                         <div style="width: 160px">
-                            <label for="area-per-tank">Area per tank (ha)</label>
+                            <label>Area per tank (ha)</label>
                             <input id="area-per-tank" type="number" min="0.001" step="0.001" value="0.1" />
                         </div>
                         <div style="flex: 1">
-                            <label for="pesticide-strength">Formulation strength (%)</label>
+                            <label>Formulation strength (%)</label>
                             <input id="pesticide-strength" type="number" min="0.1" step="0.1" value="36" />
                         </div>
                     </div>
 
                     <div class="btn-group">
-                        <button id="pest-calc" class="btn btn-primary"><i class="fas fa-calculator"></i> Calculate Dose</button>
-                        <button id="pest-reset" class="btn btn-secondary"><i class="fas fa-redo"></i> Reset</button>
+                        <button id="pest-calc" class="btn btn-primary">Calculate Dose</button>
+                        <button id="pest-reset" class="btn btn-secondary">Reset</button>
                     </div>
 
                     <div id="pest-result" class="results">
@@ -1107,7 +865,7 @@
 
                     <!-- Enhanced Tips Section -->
                     <div class="tips-section">
-                        <h3 style="margin-bottom: 15px; color: var(--primary);">Pest Management Tips</h3>
+                        <h3 style="margin-bottom: 15px; color: #4CAF50;">Pest Management Tips</h3>
                         
                         <div class="tip-item">
                             <div class="tip-title">Early Detection</div>
@@ -1128,21 +886,11 @@
                             <div class="tip-title">Chemical Controls</div>
                             <div>Use pesticides as a last resort. Always follow label instructions, wear proper PPE, and observe pre-harvest intervals.</div>
                         </div>
-                        
-                        <div class="tip-item">
-                            <div class="tip-title">Resistance Management</div>
-                            <div>Rotate pesticide classes to prevent pests from developing resistance to specific chemicals.</div>
-                        </div>
-                        
-                        <div class="tip-item">
-                            <div class="tip-title">Integrated Pest Management (IPM)</div>
-                            <div>Combine multiple control strategies for sustainable pest management that minimizes economic, health, and environmental risks.</div>
-                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Video Library Section (Hidden by default) -->
+            <!-- Enhanced Video Library Section -->
             <div class="calculator-section" id="videoLibrarySection">
                 <div class="feature-card">
                     <h2 class="feature-title" style="margin-bottom: 20px;">Video Library</h2>
@@ -1150,6 +898,40 @@
                     <div class="tabs">
                         <div class="tab active" data-tab="featured">Featured</div>
                         <div class="tab" data-tab="youtube">YouTube</div>
+                        <div class="tab" data-tab="custom">My Videos</div>
+                    </div>
+
+                    <!-- Video Upload Section -->
+                    <div class="video-upload-section">
+                        <h3 style="color: #4CAF50; margin-bottom: 15px;">Add Custom Video</h3>
+                        
+                        <div class="form-group">
+                            <label>Video Source</label>
+                            <select id="videoSource" class="form-control">
+                                <option value="youtube">YouTube</option>
+                                <option value="vimeo">Vimeo</option>
+                                <option value="direct">Direct URL</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Video URL or ID</label>
+                            <input type="text" id="videoUrl" placeholder="Enter YouTube URL, Vimeo URL, or direct video URL" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" id="videoTitle" placeholder="Enter video title" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="videoDescription" placeholder="Enter video description" class="form-control" rows="3"></textarea>
+                        </div>
+                        
+                        <button id="addCustomVideo" class="btn btn-primary" style="margin-top: 10px;">
+                            <i class="fas fa-plus"></i> Add Video to Library
+                        </button>
                     </div>
 
                     <div class="tab-content active" id="featuredTab">
@@ -1160,14 +942,20 @@
 
                     <div class="tab-content" id="youtubeTab">
                         <div class="form-group">
-                            <label for="youtubeSearch">Search YouTube for farming videos</label>
+                            <label>Search YouTube for farming videos</label>
                             <div class="row">
                                 <input type="text" id="youtubeSearch" placeholder="Enter search terms..." class="col">
-                                <button id="searchYoutube" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+                                <button id="searchYoutube" class="btn btn-primary">Search</button>
                             </div>
                         </div>
                         <div class="video-grid" id="youtubeVideos">
                             <!-- YouTube videos will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="customTab">
+                        <div class="video-grid" id="customVideos">
+                            <!-- Custom videos will be loaded here -->
                         </div>
                     </div>
                 </div>
@@ -1181,7 +969,7 @@
             </div>
             <h2 class="unavailable-title">Crop Health Diagnostic</h2>
             <p class="unavailable-text">The crop health diagnostic feature is currently unavailable. Our AI-powered disease detection system is being enhanced for better accuracy.</p>
-            <button class="btn btn-primary back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            <button class="btn btn-primary back-to-home">Back to Home</button>
         </div>
 
         <div id="communityPage" class="page unavailable-page" style="display: none;">
@@ -1190,7 +978,7 @@
             </div>
             <h2 class="unavailable-title">Community Feature</h2>
             <p class="unavailable-text">The community feature is currently unavailable. Our team is working hard to bring farmers together in a collaborative space.</p>
-            <button class="btn btn-primary back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            <button class="btn btn-primary back-to-home">Back to Home</button>
         </div>
 
         <div id="marketPage" class="page unavailable-page" style="display: none;">
@@ -1199,7 +987,7 @@
             </div>
             <h2 class="unavailable-title">Marketplace</h2>
             <p class="unavailable-text">The marketplace feature is currently under development. Soon you'll be able to buy and sell agricultural products directly.</p>
-            <button class="btn btn-primary back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            <button class="btn btn-primary back-to-home">Back to Home</button>
         </div>
 
         <div id="profilePage" class="page unavailable-page" style="display: none;">
@@ -1208,32 +996,8 @@
             </div>
             <h2 class="unavailable-title">Profile Section</h2>
             <p class="unavailable-text">The profile management feature is currently unavailable. We're building a comprehensive profile system for farmers.</p>
-            <button class="btn btn-primary back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            <button class="btn btn-primary back-to-home">Back to Home</button>
         </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <div class="footer-content">
-                <h3>GenZ Coderz</h3>
-                <p>Creating innovative solutions for modern agriculture</p>
-                
-                <div class="team-members">
-                    <div class="member">Jess Annet A</div>
-                    <div class="member">Janice Lydia</div>
-                    <div class="member">Pradyutha</div>
-                    <div class="member">Harrick Christo JP</div>
-                </div>
-                
-                <div class="hackathon-info">
-                    © HACK-AI-THON 2.0 || GenZ Coderz || SJCE
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Chat Widget Toggle -->
-    <div class="chat-widget-toggle" id="chatToggle">
-        <i class="fas fa-comments"></i>
     </div>
 
     <!-- Video Modal -->
@@ -1247,29 +1011,129 @@
         </div>
     </div>
 
-    <!-- Chatbase Chatbot Script -->
     <script>
-        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="7pFdedNB2Kz1zUtlvlJte";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-    </script>
+        // ==================== VIDEO LIBRARY ENHANCEMENTS ====================
+        class VideoLibraryManager {
+            constructor() {
+                this.customVideos = JSON.parse(localStorage.getItem('customVideos')) || [];
+                this.init();
+            }
 
-    <script>
-        // Dynamic redirect function
-        function redirectTo(page, delay = 0) {
-            setTimeout(() => {
-                if (window.location.href.startsWith("file:") || window.location.href.includes("5500")) {
-                    // VS Code Live Server / direct HTML
-                    window.location.href = page + ".html";
-                } else {
-                    // Flask routes
-                    window.location.href = "/" + page;
+            init() {
+                this.loadCustomVideos();
+            }
+
+            addCustomVideo() {
+                const source = document.getElementById('videoSource').value;
+                const url = document.getElementById('videoUrl').value.trim();
+                const title = document.getElementById('videoTitle').value.trim();
+                const description = document.getElementById('videoDescription').value.trim();
+
+                if (!url || !title) {
+                    alert('Please enter both URL and title');
+                    return;
                 }
-            }, delay);
+
+                const videoData = {
+                    id: 'custom_' + Date.now(),
+                    source: source,
+                    url: url,
+                    title: title,
+                    description: description,
+                    thumbnail: this.generateThumbnail(source, url),
+                    custom: true,
+                    timestamp: new Date().toISOString()
+                };
+
+                this.customVideos.push(videoData);
+                this.saveCustomVideos();
+                this.loadCustomVideos();
+
+                // Clear form
+                document.getElementById('videoUrl').value = '';
+                document.getElementById('videoTitle').value = '';
+                document.getElementById('videoDescription').value = '';
+
+                alert('Video added to library successfully!');
+            }
+
+            generateThumbnail(source, url) {
+                if (source === 'youtube') {
+                    const videoId = this.extractYouTubeId(url);
+                    return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
+                }
+                return 'https://via.placeholder.com/300x169?text=Video';
+            }
+
+            extractYouTubeId(url) {
+                const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+                const match = url.match(regex);
+                return match ? match[1] : null;
+            }
+
+            loadCustomVideos() {
+                const customContainer = document.getElementById('customVideos');
+                if (!customContainer) return;
+
+                customContainer.innerHTML = '';
+
+                this.customVideos.forEach(video => {
+                    const videoCard = this.createCustomVideoCard(video);
+                    customContainer.appendChild(videoCard);
+                });
+            }
+
+            createCustomVideoCard(video) {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                card.innerHTML = `
+                    <div class="video-thumbnail" style="position:relative;">
+                        <img src="${video.thumbnail}" alt="${video.title}" onerror="this.src='https://via.placeholder.com/300x169?text=Video'">
+                        <div class="custom-badge">My Video</div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">${video.title}</div>
+                        <div class="video-description">${video.description}</div>
+                        <div class="video-meta">Added: ${new Date(video.timestamp).toLocaleDateString()}</div>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => this.playCustomVideo(video));
+                return card;
+            }
+
+            playCustomVideo(video) {
+                let embedUrl = '';
+                
+                switch(video.source) {
+                    case 'youtube':
+                        const videoId = this.extractYouTubeId(video.url);
+                        embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                        break;
+                    case 'vimeo':
+                        const vimeoId = video.url.split('/').pop();
+                        embedUrl = `https://player.vimeo.com/video/${vimeoId}`;
+                        break;
+                    case 'direct':
+                        embedUrl = video.url;
+                        break;
+                }
+
+                if (embedUrl) {
+                    openVideoModal({
+                        title: video.title,
+                        videoId: embedUrl,
+                        custom: true
+                    });
+                }
+            }
+
+            saveCustomVideos() {
+                localStorage.setItem('customVideos', JSON.stringify(this.customVideos));
+            }
         }
 
-        // YouTube API Key
-        const YOUTUBE_API_KEY = 'AIzaSyCZ-227I52Mb7I3VvWWu52C9zr77F4p1Dg';
-        
-        // Fertilizer logic (from reference code)
+        // ==================== CALCULATOR LOGIC ====================
         function toHectares(value, unit){
             if (!value || isNaN(value) || value <= 0) return 0;
             value = Number(value);
@@ -1347,291 +1211,13 @@
             leaf_mite:  { name:'Leaf Mite', mlPerHa: 200 }
         };
 
-        // Utility: build YouTube link
-        function youtubeLink(videoId) {
-            return `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
-        }
-
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Update date and weather
-            updateDate();
-            updateWeather();
-            getUserLocation();
-            
-            // Navigation setup
-            const navItems = document.querySelectorAll('.nav-item');
-            
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const page = this.getAttribute('data-page');
-                    
-                    if (page === 'home') {
-                        showPage('homePage');
-                        hideAllCalculators();
-                        setActiveNav('home');
-                    } else {
-                        redirectTo(page);
-                    }
-                });
-            });
-            
-            // Feature card clicks - show calculators
-            document.getElementById('fertilizerCard').addEventListener('click', function() {
-                hideAllCalculators();
-                document.getElementById('fertilizerCalculator').classList.add('active');
-                document.getElementById('fertilizerCalculator').scrollIntoView({ behavior: 'smooth' });
-            });
-            
-            document.getElementById('pestControlCard').addEventListener('click', function() {
-                hideAllCalculators();
-                document.getElementById('pestControlCalculator').classList.add('active');
-                document.getElementById('pestControlCalculator').scrollIntoView({ behavior: 'smooth' });
-            });
-            
-            document.getElementById('videoLibraryCard').addEventListener('click', function() {
-                hideAllCalculators();
-                document.getElementById('videoLibrarySection').classList.add('active');
-                document.getElementById('videoLibrarySection').scrollIntoView({ behavior: 'smooth' });
-                loadFeaturedVideos();
-            });
-            
-            // Back to home buttons
-            document.querySelectorAll('.back-to-home').forEach(button => {
-                button.addEventListener('click', function() {
-                    showPage('homePage');
-                    setActiveNav('home');
-                    hideAllCalculators();
-                });
-            });
-            
-            // Tabs
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const tabName = this.getAttribute('data-tab');
-                    
-                    document.querySelectorAll('.tab').forEach(t => {
-                        t.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                    
-                    document.querySelectorAll('.tab-content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    document.getElementById(tabName + 'Tab').classList.add('active');
-                    
-                    // Load videos when YouTube tab is selected
-                    if (tabName === 'youtube') {
-                        loadYouTubeVideos('farming techniques');
-                    }
-                });
-            });
-            
-            // Fertilizer calculator functionality
-            document.getElementById('fert-calc').addEventListener('click', function() {
-                const crop = document.getElementById('fert-crop').value;
-                const areaVal = parseFloat(document.getElementById('fert-area').value);
-                const unit = document.getElementById('fert-unit').value;
-                
-                if(!areaVal || areaVal <= 0){ 
-                    alert('Enter a valid area'); 
-                    return; 
-                }
-                
-                const areaHa = toHectares(areaVal, unit);
-
-                const soil = {};
-                const nVal = Number(document.getElementById('soil-n').value); 
-                if(nVal) soil.N = nVal;
-                const pVal = Number(document.getElementById('soil-p').value); 
-                if(pVal) soil.P = pVal;
-                const kVal = Number(document.getElementById('soil-k').value); 
-                if(kVal) soil.K = kVal;
-
-                const rec = calcFertilizerRecommendation(crop, areaHa, (Object.keys(soil).length?soil:null));
-                if(!rec){ 
-                    alert('No recommendation logic for selected crop'); 
-                    return; 
-                }
-
-                document.getElementById('fert-summary').innerHTML = `For <strong>${areaVal} ${unit} of ${crop}</strong> (≈ ${round(areaHa,4)} ha)`;
-                document.getElementById('fert-breakdown').innerHTML = `
-                    <div><strong>Recommended fertilizer (total):</strong></div>
-                    <div class="result-item">Urea: ${rec.totals.ureaKg} kg</div>
-                    <div class="result-item">DAP: ${rec.totals.dapKg} kg</div>
-                    <div class="result-item">MOP: ${rec.totals.mopKg} kg</div>
-                    <div style="margin-top:8px"><strong>Estimated cost:</strong> ₹ ${rec.totalCost}</div>
-                `;
-                
-                let schedHtml = '<strong>Application schedule:</strong><ul style="padding-left:16px">';
-                rec.schedule.forEach(s=>{
-                    schedHtml += `<li style="margin:6px 0"><strong>${s.when}:</strong> ${s.items.map(it => `${it.name} ${it.kg} kg`).join(', ')}</li>`;
-                });
-                schedHtml += '</ul>';
-                document.getElementById('fert-schedule').innerHTML = schedHtml;
-                
-                document.getElementById('fert-explain').innerText = `Calculation: base nutrient need (kg/ha) for ${crop} multiplied by area → subtract soil test values (if provided). Then nutrient mass converted to fertilizer mass using typical formulation percentages. Prices are sample values.`;
-                
-                document.getElementById('fert-result').classList.add('active');
-                document.getElementById('fert-saved-note').style.display = 'none';
-            });
-            
-            document.getElementById('fert-reset').addEventListener('click', function() {
-                document.getElementById('fert-area').value = '';
-                document.getElementById('soil-n').value = '';
-                document.getElementById('soil-p').value = '';
-                document.getElementById('soil-k').value = '';
-                document.getElementById('fert-result').classList.remove('active');
-                document.getElementById('fert-saved-note').style.display = 'none';
-            });
-            
-            document.getElementById('fert-explain-toggle').addEventListener('click', function() {
-                const explanation = document.getElementById('fert-explain');
-                explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
-            });
-            
-            // Pest control functionality
-            document.getElementById('pest-calc').addEventListener('click', function() {
-                const crop = document.getElementById('pest-crop').value;
-                const pest = document.getElementById('pest-type').value;
-                const infectedPct = Number(document.getElementById('infected-percent').value) || 0;
-                const unit = document.getElementById('area-pest').value;
-                const areaVal = Number(document.getElementById('total-area').value);
-                
-                if(!areaVal || areaVal <= 0){ 
-                    alert('Enter total area to treat'); 
-                    return; 
-                }
-                
-                const areaHa = toHectares(areaVal, unit);
-                const affectedHa = areaHa * (Math.min(100, Math.max(0, infectedPct)) / 100 );
-
-                const def = pestDefaults[pest];
-                if(!def){ 
-                    alert('No defaults for this pest'); 
-                    return; 
-                }
-                
-                const mlPerHa = def.mlPerHa;
-                const totalMl = mlPerHa * affectedHa;
-
-                const areaPerTank = Number(document.getElementById('area-per-tank').value) || 0.1;
-                const tankSize = Number(document.getElementById('tank-size').value) || 200;
-                const perTankMl = mlPerHa * areaPerTank;
-
-                const formattedTotal = round(totalMl,2);
-                const formattedPerTank = round(perTankMl,2);
-
-                document.getElementById('pest-summary').innerHTML = `Pest: <strong>${def.name}</strong> on <strong>${round(affectedHa,3)} ha</strong> affected area.`;
-                document.getElementById('pest-breakdown').innerHTML = `
-                    <div><strong>Recommended formulation:</strong> ${mlPerHa} ml per hectare</div>
-                    <div style="margin-top:8px"><strong>Total pesticide required:</strong> ${formattedTotal} ml (for ${round(affectedHa,3)} ha)</div>
-                    <div><strong>Mix per tank (tank size ${tankSize} L, covers ${areaPerTank} ha):</strong> ${formattedPerTank} ml per full tank</div>
-                    <div style="margin-top:6px"><strong>Number of full tanks needed:</strong> ${ areaPerTank>0 ? round(affectedHa/areaPerTank,2) : '—' }</div>
-                `;
-
-                document.getElementById('pest-safety').innerHTML = `<strong>Safety:</strong> Wear PPE, avoid spraying under windy conditions, follow label waiting period. Formulation strength input is for reference only — always follow the registered product label.`;
-
-                document.getElementById('pest-result').classList.add('active');
-            });
-            
-            document.getElementById('pest-reset').addEventListener('click', function() {
-                document.getElementById('infected-percent').value = '';
-                document.getElementById('total-area').value = '';
-                document.getElementById('tank-size').value = '200';
-                document.getElementById('area-per-tank').value = '0.1';
-                document.getElementById('pesticide-strength').value = '36';
-                document.getElementById('pest-result').classList.remove('active');
-            });
-            
-            // YouTube search
-            document.getElementById('searchYoutube').addEventListener('click', function() {
-                const query = document.getElementById('youtubeSearch').value;
-                if (query) {
-                    loadYouTubeVideos(query);
-                }
-            });
-        });
-        
-        // Update date function
+        // ==================== UTILITY FUNCTIONS ====================
         function updateDate() {
             const now = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
         }
-        
-        // Get user location with improved accuracy
-        function getUserLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    function(position) {
-                        // Use reverse geocoding API to get location name
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-                        
-                        // Using OpenStreetMap Nominatim API for reverse geocoding
-                        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data && data.address) {
-                                    const address = data.address;
-                                    let locationName = '';
-                                    
-                                    // Try to get the most specific location name
-                                    if (address.city) {
-                                        locationName = address.city;
-                                    } else if (address.town) {
-                                        locationName = address.town;
-                                    } else if (address.village) {
-                                        locationName = address.village;
-                                    } else if (address.county) {
-                                        locationName = address.county;
-                                    } else if (address.state) {
-                                        locationName = address.state;
-                                    } else {
-                                        locationName = 'Your Location';
-                                    }
-                                    
-                                    // Add state if available
-                                    if (address.state && locationName !== address.state) {
-                                        locationName += `, ${address.state}`;
-                                    }
-                                    
-                                    document.getElementById('userLocation').textContent = locationName;
-                                    document.getElementById('currentLocation').textContent = locationName;
-                                } else {
-                                    setDefaultLocation();
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Error getting location:', error);
-                                setDefaultLocation();
-                            });
-                    },
-                    function(error) {
-                        console.error('Geolocation error:', error);
-                        setDefaultLocation();
-                    },
-                    {
-                        enableHighAccuracy: true,
-                        timeout: 10000,
-                        maximumAge: 60000
-                    }
-                );
-            } else {
-                setDefaultLocation();
-            }
-        }
-        
-        // Set default location
-        function setDefaultLocation() {
-            document.getElementById('userLocation').textContent = 'Chennai, Tamil Nadu';
-            document.getElementById('currentLocation').textContent = 'Chennai';
-        }
-        
-        // Update weather function (simulated)
+
         function updateWeather() {
             // In a real implementation, this would fetch from a weather API
             const temperatures = [28, 29, 30, 31, 32, 33, 34, 35];
@@ -1647,14 +1233,18 @@
             document.getElementById('weatherCondition').textContent = randomCondition;
             document.getElementById('weatherRange').textContent = `${minTemp}°C / ${maxTemp}°C`;
         }
-        
-        // Hide all calculators
+
         function hideAllCalculators() {
             document.querySelectorAll('.calculator-section').forEach(section => {
                 section.classList.remove('active');
             });
         }
-        
+
+        // Utility: build YouTube link
+        function youtubeLink(videoId) {
+            return `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
+        }
+
         // Load featured videos
         function loadFeaturedVideos() {
             const featuredVideosContainer = document.getElementById('featuredVideos');
@@ -1834,6 +1424,386 @@
 
             document.querySelector(`.nav-item[data-page="${activePage}"]`).classList.add('active');
         }
+
+        // Dynamic redirect function
+        function redirectTo(page, delay = 0) {
+            setTimeout(() => {
+                if (window.location.href.startsWith("file:") || window.location.href.includes("5500")) {
+                    // VS Code Live Server / direct HTML
+                    window.location.href = page + ".html";
+                } else {
+                    // Flask routes
+                    window.location.href = "/" + page;
+                }
+            }, delay);
+        }
+
+        // ==================== ENHANCED LOCATION DETECTION ====================
+        async function getEnhancedLocation() {
+            try {
+                // Try high-accuracy GPS first
+                const position = await new Promise((resolve, reject) => {
+                    navigator.geolocation.getCurrentPosition(resolve, reject, {
+                        enableHighAccuracy: true,
+                        timeout: 15000,
+                        maximumAge: 60000
+                    });
+                });
+
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const accuracy = position.coords.accuracy;
+
+                // Update accuracy indicator
+                updateAccuracyIndicator(accuracy);
+
+                // Try multiple geocoding services
+                const location = await getAccurateLocationName(lat, lon);
+                return location;
+
+            } catch (error) {
+                console.log('GPS failed, trying IP-based location...');
+                return await getIPBasedLocation();
+            }
+        }
+
+        async function getAccurateLocationName(lat, lon) {
+            const services = [
+                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
+                `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`
+            ];
+
+            for (const service of services) {
+                try {
+                    const response = await fetch(service);
+                    const data = await response.json();
+                    
+                    if (service.includes('nominatim')) {
+                        if (data.address) {
+                            return formatNominatimLocation(data.address);
+                        }
+                    } else {
+                        if (data.locality) {
+                            return {
+                                name: data.locality,
+                                city: data.city,
+                                region: data.principalSubdivision,
+                                country: data.countryName
+                            };
+                        }
+                    }
+                } catch (error) {
+                    console.log(`Service failed: ${service}`);
+                }
+            }
+            throw new Error('All geocoding services failed');
+        }
+
+        function formatNominatimLocation(address) {
+            let locationName = '';
+            
+            // Priority-based location naming
+            if (address.village) locationName = address.village;
+            else if (address.town) locationName = address.town;
+            else if (address.city) locationName = address.city;
+            else if (address.municipality) locationName = address.municipality;
+            else if (address.county) locationName = address.county;
+            
+            if (address.state && locationName !== address.state) {
+                locationName += `, ${address.state}`;
+            }
+            
+            return {
+                name: locationName,
+                city: address.city || address.town || address.village,
+                region: address.state,
+                country: address.country
+            };
+        }
+
+        // Fallback to IP-based location
+        async function getIPBasedLocation() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                
+                const location = {
+                    name: `${data.city}, ${data.region}`,
+                    city: data.city,
+                    region: data.region,
+                    country: data.country_name
+                };
+                
+                return location;
+            } catch (error) {
+                return setDefaultLocation();
+            }
+        }
+
+        function updateAccuracyIndicator(accuracy) {
+            const accuracyElement = document.getElementById('locationAccuracy');
+            if (accuracy < 100) {
+                accuracyElement.innerHTML = `<span class="accuracy-high">High accuracy</span>`;
+            } else if (accuracy < 1000) {
+                accuracyElement.innerHTML = `<span class="accuracy-medium">Medium accuracy</span>`;
+            } else {
+                accuracyElement.innerHTML = `<span class="accuracy-low">Low accuracy</span>`;
+            }
+        }
+
+        function updateLocationUI(location) {
+            document.getElementById('userLocation').textContent = location.name;
+            document.getElementById('currentLocation').textContent = location.name;
+            
+            // Store for later use
+            window.currentLocation = location;
+        }
+
+        function setDefaultLocation() {
+            const defaultLocation = {
+                name: 'Chennai, Tamil Nadu',
+                city: 'Chennai',
+                region: 'Tamil Nadu',
+                country: 'India'
+            };
+            
+            updateLocationUI(defaultLocation);
+            document.getElementById('locationAccuracy').innerHTML = `<span class="accuracy-low">Default location</span>`;
+            return defaultLocation;
+        }
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize video library manager
+            window.videoLibraryManager = new VideoLibraryManager();
+
+            // Update location with enhanced detection
+            getEnhancedLocation().then(location => {
+                updateLocationUI(location);
+            }).catch(error => {
+                setDefaultLocation();
+            });
+
+            // Update date and weather
+            updateDate();
+            updateWeather();
+
+            // Event listeners
+            document.getElementById('addCustomVideo').addEventListener('click', () => {
+                window.videoLibraryManager.addCustomVideo();
+            });
+
+            // Navigation setup
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const page = this.getAttribute('data-page');
+                    
+                    if (page === 'home') {
+                        showPage('homePage');
+                        hideAllCalculators();
+                        setActiveNav('home');
+                    } else {
+                        redirectTo(page);
+                    }
+                });
+            });
+            
+            // Feature card clicks - show calculators
+            document.getElementById('fertilizerCard').addEventListener('click', function() {
+                hideAllCalculators();
+                document.getElementById('fertilizerCalculator').classList.add('active');
+                document.getElementById('fertilizerCalculator').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            document.getElementById('pestControlCard').addEventListener('click', function() {
+                hideAllCalculators();
+                document.getElementById('pestControlCalculator').classList.add('active');
+                document.getElementById('pestControlCalculator').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            document.getElementById('videoLibraryCard').addEventListener('click', function() {
+                hideAllCalculators();
+                document.getElementById('videoLibrarySection').classList.add('active');
+                document.getElementById('videoLibrarySection').scrollIntoView({ behavior: 'smooth' });
+                loadFeaturedVideos();
+            });
+            
+            // Back to home buttons
+            document.querySelectorAll('.back-to-home').forEach(button => {
+                button.addEventListener('click', function() {
+                    showPage('homePage');
+                    setActiveNav('home');
+                    hideAllCalculators();
+                });
+            });
+            
+            // Tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    document.querySelectorAll('.tab').forEach(t => {
+                        t.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                    
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    document.getElementById(tabName + 'Tab').classList.add('active');
+                    
+                    // Load videos when YouTube tab is selected
+                    if (tabName === 'youtube') {
+                        loadYouTubeVideos('farming techniques');
+                    }
+                });
+            });
+            
+            // Fertilizer calculator functionality
+            document.getElementById('fert-calc').addEventListener('click', function() {
+                const crop = document.getElementById('fert-crop').value;
+                const areaVal = parseFloat(document.getElementById('fert-area').value);
+                const unit = document.getElementById('fert-unit').value;
+                
+                if(!areaVal || areaVal <= 0){ 
+                    alert('Enter a valid area'); 
+                    return; 
+                }
+                
+                const areaHa = toHectares(areaVal, unit);
+
+                const soil = {};
+                const nVal = Number(document.getElementById('soil-n').value); 
+                if(nVal) soil.N = nVal;
+                const pVal = Number(document.getElementById('soil-p').value); 
+                if(pVal) soil.P = pVal;
+                const kVal = Number(document.getElementById('soil-k').value); 
+                if(kVal) soil.K = kVal;
+
+                const rec = calcFertilizerRecommendation(crop, areaHa, (Object.keys(soil).length?soil:null));
+                if(!rec){ 
+                    alert('No recommendation logic for selected crop'); 
+                    return; 
+                }
+
+                document.getElementById('fert-summary').innerHTML = `For <strong>${areaVal} ${unit} of ${crop}</strong> (≈ ${round(areaHa,4)} ha)`;
+                document.getElementById('fert-breakdown').innerHTML = `
+                    <div><strong>Recommended fertilizer (total):</strong></div>
+                    <div class="result-item">Urea: ${rec.totals.ureaKg} kg</div>
+                    <div class="result-item">DAP: ${rec.totals.dapKg} kg</div>
+                    <div class="result-item">MOP: ${rec.totals.mopKg} kg</div>
+                    <div style="margin-top:8px"><strong>Estimated cost:</strong> ₹ ${rec.totalCost}</div>
+                `;
+                
+                let schedHtml = '<strong>Application schedule:</strong><ul style="padding-left:16px">';
+                rec.schedule.forEach(s=>{
+                    schedHtml += `<li style="margin:6px 0"><strong>${s.when}:</strong> ${s.items.map(it => `${it.name} ${it.kg} kg`).join(', ')}</li>`;
+                });
+                schedHtml += '</ul>';
+                document.getElementById('fert-schedule').innerHTML = schedHtml;
+                
+                document.getElementById('fert-explain').innerText = `Calculation: base nutrient need (kg/ha) for ${crop} multiplied by area → subtract soil test values (if provided). Then nutrient mass converted to fertilizer mass using typical formulation percentages. Prices are sample values.`;
+                
+                document.getElementById('fert-result').classList.add('active');
+            });
+            
+            document.getElementById('fert-reset').addEventListener('click', function() {
+                document.getElementById('fert-area').value = '';
+                document.getElementById('soil-n').value = '';
+                document.getElementById('soil-p').value = '';
+                document.getElementById('soil-k').value = '';
+                document.getElementById('fert-result').classList.remove('active');
+            });
+            
+            document.getElementById('fert-explain-toggle').addEventListener('click', function() {
+                const explanation = document.getElementById('fert-explain');
+                explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
+            });
+            
+            // Pest control functionality
+            document.getElementById('pest-calc').addEventListener('click', function() {
+                const crop = document.getElementById('pest-crop').value;
+                const pest = document.getElementById('pest-type').value;
+                const infectedPct = Number(document.getElementById('infected-percent').value) || 0;
+                const unit = document.getElementById('area-pest').value;
+                const areaVal = Number(document.getElementById('total-area').value);
+                
+                if(!areaVal || areaVal <= 0){ 
+                    alert('Enter total area to treat'); 
+                    return; 
+                }
+                
+                const areaHa = toHectares(areaVal, unit);
+                const affectedHa = areaHa * (Math.min(100, Math.max(0, infectedPct)) / 100 );
+
+                const def = pestDefaults[pest];
+                if(!def){ 
+                    alert('No defaults for this pest'); 
+                    return; 
+                }
+                
+                const mlPerHa = def.mlPerHa;
+                const totalMl = mlPerHa * affectedHa;
+
+                const areaPerTank = Number(document.getElementById('area-per-tank').value) || 0.1;
+                const tankSize = Number(document.getElementById('tank-size').value) || 200;
+                const perTankMl = mlPerHa * areaPerTank;
+
+                const formattedTotal = round(totalMl,2);
+                const formattedPerTank = round(perTankMl,2);
+
+                document.getElementById('pest-summary').innerHTML = `Pest: <strong>${def.name}</strong> on <strong>${round(affectedHa,3)} ha</strong> affected area.`;
+                document.getElementById('pest-breakdown').innerHTML = `
+                    <div><strong>Recommended formulation:</strong> ${mlPerHa} ml per hectare</div>
+                    <div style="margin-top:8px"><strong>Total pesticide required:</strong> ${formattedTotal} ml (for ${round(affectedHa,3)} ha)</div>
+                    <div><strong>Mix per tank (tank size ${tankSize} L, covers ${areaPerTank} ha):</strong> ${formattedPerTank} ml per full tank</div>
+                    <div style="margin-top:6px"><strong>Number of full tanks needed:</strong> ${ areaPerTank>0 ? round(affectedHa/areaPerTank,2) : '—' }</div>
+                `;
+
+                document.getElementById('pest-safety').innerHTML = `<strong>Safety:</strong> Wear PPE, avoid spraying under windy conditions, follow label waiting period. Formulation strength input is for reference only — always follow the registered product label.`;
+
+                document.getElementById('pest-result').classList.add('active');
+            });
+            
+            document.getElementById('pest-reset').addEventListener('click', function() {
+                document.getElementById('infected-percent').value = '';
+                document.getElementById('total-area').value = '';
+                document.getElementById('tank-size').value = '200';
+                document.getElementById('area-per-tank').value = '0.1';
+                document.getElementById('pesticide-strength').value = '36';
+                document.getElementById('pest-result').classList.remove('active');
+            });
+            
+            // YouTube search
+            document.getElementById('searchYoutube').addEventListener('click', function() {
+                const query = document.getElementById('youtubeSearch').value;
+                if (query) {
+                    loadYouTubeVideos(query);
+                }
+            });
+        });
+    </script>
+
+    <!-- Chatbase Chatbot Script -->
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="7pFdedNB2Kz1zUtlvlJte";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+    
+    <!-- Google Translate Element -->
+    <div id="google_translate_element" style="position: fixed; top: 15px; right: 15px; background: #4CAF50; border-radius: 40px; padding: 4px 12px; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,ta,te,ml,bn,kn,mr,gu,pa'
+        }, 'google_translate_element');
+    }
     </script>
 </body>
 </html>
